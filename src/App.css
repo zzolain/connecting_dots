@@ -1,0 +1,136 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+/* CSS reset */
+body {
+  overflow-x: hidden;
+  background-color: black;
+
+}
+.container {
+  height: 100vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  z-index: -1000;
+}
+
+
+.global-header:before {
+  position: fixed;
+  content: "";
+  top: 2vh;
+  left: 2vw;
+  width: 1px;
+  height: 96vh;
+  background-color: #343434;
+  z-index: 1000;
+}
+
+.global-header {
+  position: fixed;
+  top: 2vh;
+  left: 2vw;
+  right: 2vw;
+  height: 50px;
+  border-top: 1px solid #343434;
+  z-index: 1000;
+}
+
+.global-header:after {
+  position: fixed;
+  content: "";
+  top: 2vh;
+  right: 2vw;
+  width: 1px;
+  height: 96vh;
+  background-color: #343434;
+  z-index: 1000;
+}
+
+
+
+.global-menu__btn {
+  position: fixed;
+  left: calc(2vw + 20px);
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: none transparent;
+  z-index: 1000;
+}
+
+.global-menu__btn .global-menu__label {
+  position: absolute;
+  left: -1000rem;
+}
+
+.global-menu__btn:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: whitesmoke;
+  z-index: 1000;
+  transform: translate3d(0, -3px, 0);
+  transition: all .5s;
+}
+
+.global-menu__btn:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: whitesmoke;
+  z-index: 1000;
+  transform: translate3d(0, 3px, 0);
+  transition: all .5s;
+}
+
+.global-menu--on .global-menu__btn:before {
+  width: 25px;
+  background-color: black;
+  transform: rotateZ(45deg) translate3d(0, 2px, 0);
+}
+
+.global-menu--on .global-menu__btn:after {
+  width: 25px;
+  background-color: black;
+  transform: rotateZ(-45deg) translate3d(0, -2px, 0);
+}
+
+.global-footer {
+  position: fixed;
+  top: 98vh;
+  left: 2vw;
+  right: 2vw;
+  border-top: 1px solid #343434;
+  z-index: 1000;
+}

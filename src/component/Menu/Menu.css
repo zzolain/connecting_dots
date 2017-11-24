@@ -1,0 +1,23 @@
+.global-menu {
+  position: fixed;
+  /* top: -100vh; */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: calc(2vh + 50px) calc(2vw + 20px);
+  display: flex;
+  background-color: whitesmoke;
+  flex-direction: column;
+  z-index: 900;
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.global-menu--on { /* body class */
+  overflow: hidden;
+}
+
+.global-menu--on .global-menu {
+  opacity: 100;
+}
+

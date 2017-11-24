@@ -1,0 +1,291 @@
+.character {
+    position: fixed;
+    top: 40%;
+    opacity: 0;
+ }
+
+.scenes .prologue {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+
+.scene {
+    position: relative;
+    height: 70vh;
+    z-index: 1;
+    transition: all, 1s;
+}
+
+.scene--last {
+    height: 95vh;
+}
+
+.scene--active {
+    transform: translate3d(0, -20px, 0);
+}
+
+.scene__content {
+    height: 100%;
+    position: relative;
+    z-index: 100;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+}
+
+.scene--active .scene__content {
+    opacity: 100;
+}
+
+.dot-main__text {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid whitesmoke;
+    background-color: black;
+
+}
+
+.dot-main__text:before {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    content: '';
+    width: 20vw;
+    background-color: black;
+    height: 2px;
+    transition: all 1s;
+}
+
+.scene--active .dot-main__text:before {
+    transform: translate3d(-100%, 0, 0);
+}
+
+.dot-main__text:after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    content: '';
+    width: 20vw;
+    background-color: black;
+    height: 2px;
+    transition: all 1s;
+}
+
+.scene--active .dot-main__text:after {
+    transform: translate3d(100%, 0, 0);
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 0px;
+    border: .5px dashed whitesmoke;
+    transition: all 5s;
+    z-index: 50;
+    opacity: 0;
+}
+
+.arrow--active {
+    opacity: 100;
+    height: 71vh;
+}
+
+.scene--last .arrow--active {
+    height: 96vh;
+}
+
+.dots {
+    position: relative;
+    margin-top: 5vw;
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.dot__container {
+    max-width: 70vw;
+    background-color: rgba(0, 0, 0, .6);
+    line-height: .8rem;
+    opacity: 0;
+    transform: translate3d(100vw, 0, 0);
+    text-align: right;
+    transition: all 1s;
+    
+}
+
+.dot__container--active {
+    transform: translate3d(-8vw, 0, 0);
+    opacity: 100;
+}
+
+.dot__text {
+    font-size: .8rem;
+    font-weight: 300;
+    text-shadow: rgba(0,0,0,1) 0 0 5px;
+    max-width: 50vw;
+    color: whitesmoke;
+    opacity: 100;
+    transition: all .5s;
+}
+
+.dot__text p {
+    text-align: right;
+}
+
+.epilogue {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    font-size: .8rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    transition: all 2s 4.5s;
+    opacity: 0;
+}
+
+.epilogue--active {
+    top: -3vh;
+    opacity: 100;
+}
+
+.epilogue .about {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border: 1.5px dashed whitesmoke;
+    border-radius: 50%;
+    animation: neonBorder 4s infinite;
+}
+
+.epilogue a {
+    color: dodgerblue;
+
+}
+
+@keyframes neonBorder {
+    33% {
+        border-color: tomato;
+    }
+    66% {
+        border-color: dodgerblue;
+    }
+    100% {
+        border-color: whitesmoke;
+    }
+}
+
+.epilogue .quote {
+    position: absolute;
+    font-weight: 300;
+    padding: 0;
+    top: -100px;
+    width: 270px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+
+
+.epilogue .about__contacts {
+    margin-top: 2vh;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__contacts a {
+    animation: neonText 4s infinite;
+    color: whitesmoke;
+}
+
+@keyframes neonText {
+    33% {
+        color: tomato;
+    }
+    66% {
+        color: dodgerblue;
+    }
+    100% {
+        color: whitesmoke;
+    }
+}
+
+/* @media screen and (max-width: 700px) {
+    .character {
+        top: 20%;
+    }
+
+    .scene {
+        height: 65vh;
+    }
+    .arrow--active {
+        height: 66vh;
+    }
+    .dots {
+        height: 50vh;
+    }
+    .dot-main__text {
+        width: 80%;
+    }
+    .dot__container {
+        max-width: 100%;
+        font-size: .7rem;
+    }
+    .dot__container:before {
+        width: 8px;
+        height: 8px;
+        transform: translate3d(0, 3px, 0);
+    }
+    .dot__container--active {
+        transform: translate3d(-1vw, 0, 0);
+    }
+
+    .dot__text {
+        max-width: 78vw;
+    }
+    .epilogue .quote {
+        display: none;
+    }
+    .epilogue .about__contacts {
+        left: 75vw;
+    }
+    .scene__content {
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1299px) {
+    .epilogue .quote {
+        right: -80px;
+    }
+    .epilogue .about__contacts {
+        left: 45vw;
+    }
+    .dot-main__text {
+        width: 70vw;
+    }
+
+} */
