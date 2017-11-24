@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Menu.css';
 
 class Menu extends Component {
+
     render(){
         return (
             <nav className="global-menu">
@@ -11,6 +12,8 @@ class Menu extends Component {
                 <a href="#" className="global-menu__link" data-menu-index="3">Dev-logs</a>
                 <a href="#" className="global-menu__link" data-menu-index="4">Contact</a>
             </nav>
+ 
+            
         )
     }
 }

@@ -1,15 +1,21 @@
 .global-menu {
+  transition: opacity 1.5s;
   position: fixed;
-  /* top: -100vh; */
+  width: 100%;
+  height: 100%;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  padding: calc(2vh + 50px) calc(2vw + 20px);
+  right: 0;
+  top: 100vh;
+  bottom: 0;
+  padding: calc(3vh + 30px) calc(2vw + 20px);
+  font-size: calc(1vw + 2rem);
+  line-height: calc(3vw + 3rem);
+  background-color: black;
+  color: whitesmoke;
   display: flex;
-  background-color: whitesmoke;
   flex-direction: column;
+  align-items: center;
   z-index: 900;
-  transition: opacity 1s;
   opacity: 0;
 }
 
@@ -19,5 +25,6 @@
 
 .global-menu--on .global-menu {
   opacity: 100;
+  top: 0;
 }
 

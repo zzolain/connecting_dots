@@ -116,13 +116,13 @@ body {
 
 .global-menu--on .global-menu__btn:before {
   width: 25px;
-  background-color: black;
+  /* background-color: black; */
   transform: rotateZ(45deg) translate3d(0, 2px, 0);
 }
 
 .global-menu--on .global-menu__btn:after {
   width: 25px;
-  background-color: black;
+  /* background-color: black; */
   transform: rotateZ(-45deg) translate3d(0, -2px, 0);
 }
 
