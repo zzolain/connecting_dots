@@ -31,16 +31,26 @@ button:focus {
 /* CSS reset */
 body {
   overflow-x: hidden;
-  background-color: black;
+  background-color: transparent;
+
 
 }
 .container {
   height: 100vh;
-  padding-left: 2vw;
-  padding-right: 2vw;
   z-index: -1000;
+  display: flex;
+  justify-content: center;
 }
 
+.contents {
+  width: 100%;
+}
+
+.content {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  
+}
 
 .global-header:before {
   position: fixed;
@@ -87,6 +97,10 @@ body {
   z-index: 1000;
 }
 
+.global-menu__btn:hover{
+  cursor: pointer;
+}
+
 .global-menu__btn .global-menu__label {
   position: absolute;
   left: -1000rem;
@@ -116,13 +130,13 @@ body {
 
 .global-menu--on .global-menu__btn:before {
   width: 25px;
-  /* background-color: black; */
+  background-color: black;
   transform: rotateZ(45deg) translate3d(0, 2px, 0);
 }
 
 .global-menu--on .global-menu__btn:after {
   width: 25px;
-  /* background-color: black; */
+  background-color: black;
   transform: rotateZ(-45deg) translate3d(0, -2px, 0);
 }
 

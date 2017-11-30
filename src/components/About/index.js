@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import "./About.css";
+import "./style.css";
+import SceneList from "./scene_list";
+import Epilogue from "./epilogue";
 
 class About extends Component {
   state = {
@@ -56,7 +58,8 @@ class About extends Component {
           'Opentutorials.org Night Coding season 1 with Google Korea.',
           "Study Group with Back-end developers and designers.",
           'NomadCoders.co React/React Native On-line course.',
-          'StudioMeal.com Interaction web Workshop season 1 in Jeju.'
+          'StudioMeal.com Interaction web Workshop season 1 in Jeju.',
+          'Nov 24. Got a certificate of Engineer Information Processing.'
         ]
       }
     ]
@@ -71,36 +74,9 @@ class About extends Component {
             <span>About Dots</span>
           </div>
 
-          <Scenes scenes={this.state.scenes} />
+          <SceneList scenes={this.state.scenes} />
 
-          <div className="epilogue">
-            <div className="about">
-              <span>Front-end Developer</span>
-              <span>zzolain</span>
-              <a href="mailto:zzolain@gmail.com">zzolain@gmail.com</a>
-            </div>
-            <div className="about__contacts">
-              <p>
-                <a href="https://github.com/zzolain" target="_blank">
-                  Github
-                </a>
-              </p>
-              <p>
-                <a href="https://www.facebook.com/zzolain" target="_blank">
-                  Facebook
-                </a>
-              </p>
-            </div>
-            <div className="quote">
-              <p>
-                You can’t connect the dots looking forward;
-                <br /> you can only connect them looking backwards.
-                <br /> So you have to trust that the dots will somehow
-                <br /> connect in your future.
-              </p>
-              <span>- Steve Jobs -</span>
-            </div>
-          </div>
+          <Epilogue />
         </section>
       </div>
     );
@@ -109,29 +85,45 @@ class About extends Component {
 
 export default About;
 
-function Scenes({ scenes }) {
-  return scenes.map((scene, index) => {
-    return (
-      <div className="scene" key={index}>
-        <div className="arrow" />
-        <div className="scene__content">
-          <div className="dot-main">
-            <div className="dot-main__text">
-            <p>{scene.date}</p>
-            <p>{scene.title}</p>
-            </div>
-          </div>
-          <div className="dots">
-            {scene.dots.map((dot, index) => {
-              return (
-                <span className="dot__text" key={index}>
-                  {dot}
-                </span>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    );
-  });
+
+window.addEventListener("scroll", function() {
+  scrollCheckerY();
+});
+
+function scrollCheckerY() {
+  var elemScenes = document.querySelectorAll(".scene");
+  var elemMainDots = document.querySelectorAll(".scene__content");
+  var elemArrows = document.querySelectorAll(".arrow");
+
+  var characterY = document.querySelector(".character").offsetTop;
+  var yVal = 0;
+
+  for (var i = 0; i < elemMainDots.length; i++) {
+    yVal = elemMainDots[i].getBoundingClientRect().y;
+
+    if (yVal < window.innerHeight * 0.08 || yVal > window.innerHeight * 0.8) {
+      elemScenes[i].classList.remove("scene--active");
+      elemScenes[i].lastElementChild.lastElementChild.classList.remove(
+        "dots--active"
+      );
+    } else {
+      elemScenes[i].classList.add("scene--active");
+      elemScenes[i].lastElementChild.lastElementChild.classList.add(
+        "dots--active"
+      );
+    }
+
+    if (Math.abs(characterY - yVal) < 300) {
+      elemArrows[i].classList.add("arrow--active");
+    }
+  }
+
+  var elemSceneLast = elemScenes[elemScenes.length - 1];
+  if (!elemSceneLast.classList.contains("scene--active")) {
+    document.querySelector(".epilogue").classList.add("epilogue--active");
+  } else {
+    document.querySelector(".epilogue").classList.remove("epilogue--active");
+  }
 }
+
+

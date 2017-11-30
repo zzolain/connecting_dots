@@ -1,0 +1,187 @@
+.logo {
+    padding-top: 20vh;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    
+}
+.logo__container {
+    position: relative;
+    width: calc(200px + 10vw);
+    height: calc(200px + 10vw);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo__connectingLine--outer {
+    position: absolute;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+
+    z-index: 10
+}
+
+.logo__connectingLine--left {
+    position: relative;
+    width: 50%;
+    height: 50%;
+}
+
+.logo__connectingLine--right {
+    position: relative;
+    width: 50%;
+    height: 50%;
+}
+
+.logo__connectingLine {
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.logo__connectingLine__mask--inner {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    background-color: black;
+    z-index: 1;
+}
+
+.logo__dot--left,
+.logo__dot--center,
+.logo__dot--right {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    z-index: 100;
+    opacity: 0;
+}
+
+.logo__dot--left {
+    left: 0;
+    transform: translate3d(-50%, 0, 0);
+    opacity: 0;
+}
+
+.logo__dot--center {
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    opacity: 0;
+}
+
+.logo__dot--right {
+    right: 0;
+    transform: translate3d(50%, 0, 0);
+    opacity: 0;
+}
+
+.logo__connectingLine__mask--bottom {
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    height: 50%;
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+}
+
+.logo__connectingLine__mask--outer {
+    position: absolute;
+    top:0;
+    width: 130%;
+    height: 50%;
+    background-color: black;
+    transform: translate3d(-20%, 0, 0);
+    z-index: 10;
+}
+.logo__title {
+    color: white;
+    opacity: 0;
+}
+
+.logo__title p {
+    font-size: 3rem;
+    animation: logoTitle 5s infinite;
+}
+
+@keyframes logoTitle {
+    50% {
+        font-size: 3.15rem;
+    }
+}
+
+
+.logo__container--activate .logo__dot--left,
+.logo__container--activate .logo__dot--center,
+.logo__container--activate .logo__dot--right {
+    animation: showUp 0.8s;
+    opacity: 100;
+
+}
+
+@keyframes showUp {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+    80%{
+        width: 12%;
+        height: 12%;
+        opacity: 100;
+    }
+    100%{ 
+        width: 10%;
+        height: 10%;       
+    }
+}
+
+
+.logo__container--activate .logo__dot--center {
+    transition-delay: 1.6s;
+    animation-delay: 0.8s;
+}
+
+.logo__container--activate .logo__dot--right {
+    animation-delay: 1.6s;
+    transition-delay: 2.4s;
+}
+
+.logo__container--activate .logo__connectingLine__mask--outer {
+    transform: rotateZ(-180deg);
+    transform-origin: left bottom;
+    transition: all 1.2s linear;
+    transition-delay: 2.4s;
+}
+
+.logo__container--activate .logo__connectingLine--right .logo__connectingLine__mask--inner{
+    transform: rotateZ(-180deg);
+    transform-origin: left bottom;
+    transition: all 1.2s linear;
+    transition-delay: 3s;
+}
+
+.logo__container--activate .logo__connectingLine--left .logo__connectingLine__mask--inner{
+    transform: rotateZ(-180deg);
+    transform-origin: left bottom;
+    transition: all 1.2s linear;
+    transition-delay: 3.8s;
+}
+
+.logo__container--activate .logo__title {
+    opacity: 100;
+    transition: all 1s;
+    transition-delay: 5s;
+}
+

@@ -5,18 +5,19 @@
   height: 100%;
   left: 0;
   right: 0;
-  top: 100vh;
+  top: 0;
   bottom: 0;
   padding: calc(3vh + 30px) calc(2vw + 20px);
   font-size: calc(1vw + 2rem);
   line-height: calc(3vw + 3rem);
-  background-color: black;
-  color: whitesmoke;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 900;
   opacity: 0;
+  transform: translate3d(0, -100%, 0);
+  list-style: none;
 }
 
 .global-menu--on { /* body class */
@@ -25,6 +26,17 @@
 
 .global-menu--on .global-menu {
   opacity: 100;
-  top: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.global-menu--on .global-menu:before {
+  content: '';
+  position: fixed;
+  top: 2vh;
+  left: 2vw;
+  right: 2vw;
+  height: 50px;
+  border-top: 1px solid #343434;
+  z-index: 1000;
 }
 
