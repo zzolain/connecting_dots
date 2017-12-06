@@ -1,34 +1,20 @@
 import React, { Component } from "react";
 import "./style.css";
-import MenuItems from "./menu_item";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../../reducer/index";
 
 class Menu extends Component {
   state = {
     links: [
-      {
-        url: "https://zzolain.github.io",
-        linkName: "Home"
-      },
-      {
-        url: "#",
-        linkName: "About"
-      },
-      {
-        url: "#",
-        linkName: "Study"
-      },
-      {
-        url: "#",
-        linkName: "Dev-logs"
-      },
-      {
-        url: "#",
-        linkName: "Contact"
-      }
+      {linkName: "Home"},
+      {linkName: "About"},
+      {linkName: "Study"}
     ],
     menu: false
   };
 
+// DOM
   menuBtn = () => {
     if (this.state.menu) {
       this.inactivateMenu();
@@ -46,6 +32,20 @@ class Menu extends Component {
     document.body.classList.remove("global-menu--on");
     this.setState({ menu: false });
   }
+// DOM
+
+  linkList() {
+    return this.state.links.map((link, index) => {
+      return (
+        <li 
+          key={index}
+          onClick={ () => this.props.selectMenu(link.linkName) }
+          className="global-menu__link">
+            {link.linkName}
+        </li>
+      );
+    });
+  }
 
   render() {
     return (
@@ -54,15 +54,17 @@ class Menu extends Component {
           <span className="global-menu__label">Menu</span>
         </button>
         <nav className="global-menu">
-        <ul>
-          <MenuItems links={this.state.links} />
-        </ul>
+          <ul>{this.linkList()}</ul>
         </nav>
       </div>
     );
   }
 }
 
-export default Menu;
+function mapDispatchToProps(dispatch) {
+  return {
+    selectMenu : bindActionCreators(actionCreators.selectMenu, dispatch)
+  };
+}
 
-
+export default connect(null, mapDispatchToProps)(Menu);

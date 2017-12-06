@@ -1,5 +1,5 @@
 .hello {
-    height: 100vh;
+    height: 120vh;
     background-color: whitesmoke;
 
 }
@@ -9,5 +9,5 @@
     position: absolute;
     font-size : 5rem;
     font-weight: 600;
-    transform: translate3d(10%, -35%, 0);
+    transform: translate3d(10%, -40%, 0);
 }

@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 import "./style.css";
 
-function Hello () {
-    return (
-        <div className="hello">
-            <p>Hello I'm Jinsol Kim,</p>
-            <span> hooked on coding world</span>
-        </div>
-    )
+function Hello() {
+  return (
+    <div className="hello">
+      <p>Hello I'm Jinsol,</p>
+
+    </div>
+  );
 }
 
 export default Hello;

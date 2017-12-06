@@ -31,7 +31,7 @@ button:focus {
 /* CSS reset */
 body {
   overflow-x: hidden;
-  background-color: transparent;
+  background-color: black;
 
 
 }
@@ -89,6 +89,7 @@ body {
 .global-menu__btn {
   position: fixed;
   left: calc(2vw + 20px);
+  top: calc(2vh + 8px);
   padding: 0;
   width: 44px;
   height: 44px;
@@ -106,38 +107,19 @@ body {
   left: -1000rem;
 }
 
-.global-menu__btn:before {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: whitesmoke;
-  z-index: 1000;
-  transform: translate3d(0, -3px, 0);
-  transition: all .5s;
-}
-
 .global-menu__btn:after {
   content: "";
   display: block;
-  width: 30px;
-  height: 3px;
-  background-color: whitesmoke;
+  width:25px;
+  height: 25px;
+  border-radius:50%;
+  border: solid gray 1.5px;
   z-index: 1000;
-  transform: translate3d(0, 3px, 0);
   transition: all .5s;
 }
 
-.global-menu--on .global-menu__btn:before {
-  width: 25px;
-  background-color: black;
-  transform: rotateZ(45deg) translate3d(0, 2px, 0);
-}
-
 .global-menu--on .global-menu__btn:after {
-  width: 25px;
-  background-color: black;
-  transform: rotateZ(-45deg) translate3d(0, -2px, 0);
+  transform: rotateY(-180deg);
 }
 
 .global-footer {

@@ -1,24 +1,28 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import "./Container.css";
 
-import Menu from "./components/Menu";
-import Logo from "./components/Logo";
+import Menu from "./components/Menu/menu_list";
+import Home from "./components/Home";
 import About from "./components/About";
-import Hello from "./components/Hello";
+
 
 class Container extends Component {
+  components = {
+    Home : Home,
+    About : About
+  };
   render() {
+    const RenderComponent = this.components[this.props.menuSelected];
     return (
       <div className="container">
         <header className="global-header">
           <Menu />
         </header>
         <article className="contents">
-          <Logo />
+          <RenderComponent />
 
-          <Hello />
 
-          <About />
         </article>
         <footer className="global-footer" />
       </div>
@@ -26,4 +30,7 @@ class Container extends Component {
   }
 }
 
-export default Container;
+function mapStateToProps(state){
+  return {menuSelected : state.menuSelected}
+}
+export default connect(mapStateToProps, null)(Container);

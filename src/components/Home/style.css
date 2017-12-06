@@ -1,13 +1,13 @@
-.logo {
+.home {
     padding-top: 20vh;
-    height: 110vh;
+    height: 150vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: black;
     
 }
-.logo__container {
+.home__container {
     position: relative;
     width: calc(200px + 10vw);
     height: calc(200px + 10vw);
@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-.logo__connectingLine--outer {
+.home__connectingLine--outer {
     position: absolute;
     border: 2px solid white;
     border-radius: 50%;
@@ -26,26 +26,26 @@
     z-index: 10
 }
 
-.logo__connectingLine--left {
+.home__connectingLine--left {
     position: relative;
     width: 50%;
     height: 50%;
 }
 
-.logo__connectingLine--right {
+.home__connectingLine--right {
     position: relative;
     width: 50%;
     height: 50%;
 }
 
-.logo__connectingLine {
+.home__connectingLine {
     width: 100%;
     height: 100%;
     border: 2px solid white;
     border-radius: 50%;
 }
 
-.logo__connectingLine__mask--inner {
+.home__connectingLine__mask--inner {
     position: absolute;
     width: 100%;
     height: 50%;
@@ -54,9 +54,9 @@
     z-index: 1;
 }
 
-.logo__dot--left,
-.logo__dot--center,
-.logo__dot--right {
+.home__dot--left,
+.home__dot--center,
+.home__dot--right {
     position: absolute;
     width: 10%;
     height: 10%;
@@ -66,25 +66,25 @@
     opacity: 0;
 }
 
-.logo__dot--left {
+.home__dot--left {
     left: 0;
     transform: translate3d(-50%, 0, 0);
     opacity: 0;
 }
 
-.logo__dot--center {
+.home__dot--center {
     left: 50%;
     transform: translate3d(-50%, 0, 0);
     opacity: 0;
 }
 
-.logo__dot--right {
+.home__dot--right {
     right: 0;
     transform: translate3d(50%, 0, 0);
     opacity: 0;
 }
 
-.logo__connectingLine__mask--bottom {
+.home__connectingLine__mask--bottom {
     position: absolute;
     bottom: 0;
     background-color: black;
@@ -97,7 +97,7 @@
     text-align: center;
 }
 
-.logo__connectingLine__mask--outer {
+.home__connectingLine__mask--outer {
     position: absolute;
     top:0;
     width: 130%;
@@ -106,26 +106,21 @@
     transform: translate3d(-20%, 0, 0);
     z-index: 10;
 }
-.logo__title {
+.home__title {
     color: white;
     opacity: 0;
 }
 
-.logo__title p {
-    font-size: 3rem;
-    animation: logoTitle 5s infinite;
-}
-
-@keyframes logoTitle {
-    50% {
-        font-size: 3.15rem;
-    }
+.home__title p {
+    font-size: 3.3rem;
 }
 
 
-.logo__container--activate .logo__dot--left,
-.logo__container--activate .logo__dot--center,
-.logo__container--activate .logo__dot--right {
+
+
+.home--active .home__dot--left,
+.home--active .home__dot--center,
+.home--active .home__dot--right {
     animation: showUp 0.8s;
     opacity: 100;
 
@@ -148,40 +143,61 @@
 }
 
 
-.logo__container--activate .logo__dot--center {
+.home--active .home__dot--center {
     transition-delay: 1.6s;
     animation-delay: 0.8s;
 }
 
-.logo__container--activate .logo__dot--right {
+.home--active .home__dot--right {
     animation-delay: 1.6s;
     transition-delay: 2.4s;
 }
 
-.logo__container--activate .logo__connectingLine__mask--outer {
+.home--active .home__connectingLine__mask--outer {
     transform: rotateZ(-180deg);
     transform-origin: left bottom;
     transition: all 1.2s linear;
     transition-delay: 2.4s;
 }
 
-.logo__container--activate .logo__connectingLine--right .logo__connectingLine__mask--inner{
+.home--active .home__connectingLine--right .home__connectingLine__mask--inner{
     transform: rotateZ(-180deg);
     transform-origin: left bottom;
     transition: all 1.2s linear;
     transition-delay: 3s;
 }
 
-.logo__container--activate .logo__connectingLine--left .logo__connectingLine__mask--inner{
+.home--active .home__connectingLine--left .home__connectingLine__mask--inner{
     transform: rotateZ(-180deg);
     transform-origin: left bottom;
     transition: all 1.2s linear;
     transition-delay: 3.8s;
 }
 
-.logo__container--activate .logo__title {
+.home--active .home__title {
     opacity: 100;
     transition: all 1s;
     transition-delay: 5s;
 }
 
+.home__skills {
+    display: flex;
+    margin-top: 5vh;
+    color: white;
+    font-size: .9rem;
+    height: 3rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    opacity: 0;
+}
+
+.home__skill {
+    text-align: center;
+    width: 33%;
+}
+
+.home--active .home__skills {
+    opacity: 100;
+    transition: all 1s;
+    transition-delay: 6s;
+}

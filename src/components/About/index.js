@@ -86,9 +86,9 @@ class About extends Component {
 export default About;
 
 
-window.addEventListener("scroll", function() {
-  scrollCheckerY();
-});
+// window.addEventListener("scroll", function() {
+//   scrollCheckerY();
+// });
 
 function scrollCheckerY() {
   var elemScenes = document.querySelectorAll(".scene");
