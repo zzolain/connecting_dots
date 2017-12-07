@@ -7,6 +7,7 @@ const SceneListItem = ({scene}) => {
       <div className="scene__content">
         <div className="dot-main">
           <div className="dot-main__text">
+            <div className="dot-main__circle" />
             <p>{scene.date}</p>
             <p>{scene.title}</p>
           </div>

@@ -5,7 +5,7 @@ const Epilogue = () => {
     <div className="epilogue">
       <div className="about">
         <span>Front-end Developer</span>
-        <span>zzolain</span>
+        <span>Jinsol Kim</span>
         <a href="mailto:zzolain@gmail.com">zzolain@gmail.com</a>
       </div>
       <div className="about__contacts">
@@ -16,16 +16,7 @@ const Epilogue = () => {
           <a href="https://www.facebook.com/zzolain">Facebook</a>
         </p>
       </div>
-      <div className="quote">
-        <p>
-          You can’t connect the dots looking forward;
-          <br /> you can only connect them looking backwards.
-          <br /> So you have to trust that the dots will somehow
-          <br /> connect in your future.
-        </p>
-        <span>- Steve Jobs -</span>
-      </div>
-    </div>
+     </div>
   );
 };
 

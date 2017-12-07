@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Hello from "../Hello/index";
 import "./style.css";
 
 export default class Home extends Component {
@@ -47,7 +46,8 @@ export default class Home extends Component {
             <span>JavaScript</span>
           </div>
           <div className="home__skill">
-            <span>and React</span>
+            <span>and</span>
+            <span> React</span>
           </div>
         </div>
       </div>

@@ -76,9 +76,15 @@
 .global-menu__side {
   position: fixed;
   width: 10rem;
-  color: white;
+  color: #727272;
   text-align: center;
   top: 50%;
+}
+
+.global-menu__side:hover {
+  cursor: pointer;
+  color: tomato;
+  transition: all .3s;
 }
 
 .global-menu__side.global-menu__side--left {
@@ -93,4 +99,10 @@
   transform-origin: right top;
   transform: rotateZ(90deg) translate3d(50%, 0, 0);
   top: 50%;
+}
+
+@media screen and (max-width: 700px){
+  .global-menu__side {
+    display: none;
+  }
 }

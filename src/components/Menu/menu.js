@@ -3,7 +3,7 @@ import "./style.css";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../reducer/index";
-import About from "../About/index";
+
 
 class Menu extends Component {
   constructor(props) {
