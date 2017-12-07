@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./Container.css";
 
-import Menu from "./components/Menu/menu_list";
+import Menu from "./components/Menu/menu";
 import Home from "./components/Home";
 import About from "./components/About";
 
@@ -14,6 +14,7 @@ class Container extends Component {
   };
   render() {
     const RenderComponent = this.components[this.props.menuSelected];
+
     return (
       <div className="container">
         <header className="global-header">
@@ -31,6 +32,6 @@ class Container extends Component {
 }
 
 function mapStateToProps(state){
-  return {menuSelected : state.menuSelected}
+  return {menuSelected : state.menuState.menuSelected}
 }
 export default connect(mapStateToProps, null)(Container);

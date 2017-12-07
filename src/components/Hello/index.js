@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Hello() {
+export default function Hello() {
   return (
     <div className="hello">
       <p>Hello I'm Jinsol,</p>
@@ -10,4 +10,4 @@ function Hello() {
   );
 }
 
-export default Hello;
+

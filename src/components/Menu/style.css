@@ -1,3 +1,7 @@
+.menu {
+  position: relative;
+}
+
 .global-menu {
   transition: all .5s;
   position: fixed;
@@ -25,11 +29,15 @@
   list-style: none;
 }
 
-.global-menu a{
+.global-menu span:hover {
+  cursor: pointer;
+}
+
+.global-menu span{
   position: relative;
 }
 
-.global-menu a:after {
+.global-menu span:after {
   content: '';
   height: 1px;
   position: absolute;
@@ -41,7 +49,7 @@
   transition: all .3s;
 }
 
-.global-menu a:hover:after {
+.global-menu span:hover:after {
   transform: scaleX(1);
 }
 
@@ -65,3 +73,24 @@
   z-index: 1000;
 }
 
+.global-menu__side {
+  position: fixed;
+  width: 10rem;
+  color: white;
+  text-align: center;
+  top: 50%;
+}
+
+.global-menu__side.global-menu__side--left {
+  left: calc(2vw + 10px);
+  transform-origin: left bottom;
+  transform: rotateZ(90deg) translate3d(-65%, 0, 0);
+
+}
+
+.global-menu__side.global-menu__side--right {
+  right: calc(2vw + 10px);
+  transform-origin: right top;
+  transform: rotateZ(90deg) translate3d(50%, 0, 0);
+  top: 50%;
+}

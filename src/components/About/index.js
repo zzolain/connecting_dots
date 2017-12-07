@@ -3,7 +3,7 @@ import "./style.css";
 import SceneList from "./scene_list";
 import Epilogue from "./epilogue";
 
-class About extends Component {
+export default class About extends Component {
   state = {
     scenes: [
       {
@@ -64,10 +64,45 @@ class About extends Component {
       }
     ]
   };
+ scrollCheckerY() {
+    var elemScenes = document.querySelectorAll(".scene");
+    var elemMainDots = document.querySelectorAll(".scene__content");
+    var elemArrows = document.querySelectorAll(".arrow");
+  
+    var characterY = document.querySelector(".character").offsetTop;
+    var yVal = 0;
+  
+    for (var i = 0; i < elemMainDots.length; i++) {
+      yVal = elemMainDots[i].getBoundingClientRect().y;
+  
+      if (yVal < window.innerHeight * 0.08 || yVal > window.innerHeight * 0.8) {
+        elemScenes[i].classList.remove("scene--active");
+        elemScenes[i].lastElementChild.lastElementChild.classList.remove(
+          "dots--active"
+        );
+      } else {
+        elemScenes[i].classList.add("scene--active");
+        elemScenes[i].lastElementChild.lastElementChild.classList.add(
+          "dots--active"
+        );
+      }
+  
+      if (Math.abs(characterY - yVal) < 300) {
+        elemArrows[i].classList.add("arrow--active");
+      }
+    }
+  
+    var elemSceneLast = elemScenes[elemScenes.length - 1];
+    if (!elemSceneLast.classList.contains("scene--active")) {
+      document.querySelector(".epilogue").classList.add("epilogue--active");
+    } else {
+      document.querySelector(".epilogue").classList.remove("epilogue--active");
+    }
+  }
 
   render() {
     return (
-      <div className="about">
+      <div className="about" onScroll={() => this.scrollCheckerY()}>
         <div className="character" />
         <section className="scenes">
           <div className="prologue">
@@ -83,47 +118,9 @@ class About extends Component {
   }
 }
 
-export default About;
 
 
-// window.addEventListener("scroll", function() {
-//   scrollCheckerY();
-// });
 
-function scrollCheckerY() {
-  var elemScenes = document.querySelectorAll(".scene");
-  var elemMainDots = document.querySelectorAll(".scene__content");
-  var elemArrows = document.querySelectorAll(".arrow");
 
-  var characterY = document.querySelector(".character").offsetTop;
-  var yVal = 0;
-
-  for (var i = 0; i < elemMainDots.length; i++) {
-    yVal = elemMainDots[i].getBoundingClientRect().y;
-
-    if (yVal < window.innerHeight * 0.08 || yVal > window.innerHeight * 0.8) {
-      elemScenes[i].classList.remove("scene--active");
-      elemScenes[i].lastElementChild.lastElementChild.classList.remove(
-        "dots--active"
-      );
-    } else {
-      elemScenes[i].classList.add("scene--active");
-      elemScenes[i].lastElementChild.lastElementChild.classList.add(
-        "dots--active"
-      );
-    }
-
-    if (Math.abs(characterY - yVal) < 300) {
-      elemArrows[i].classList.add("arrow--active");
-    }
-  }
-
-  var elemSceneLast = elemScenes[elemScenes.length - 1];
-  if (!elemSceneLast.classList.contains("scene--active")) {
-    document.querySelector(".epilogue").classList.add("epilogue--active");
-  } else {
-    document.querySelector(".epilogue").classList.remove("epilogue--active");
-  }
-}
 
 
