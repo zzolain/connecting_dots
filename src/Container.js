@@ -5,12 +5,13 @@ import "./Container.css";
 import Menu from "./components/Menu/menu";
 import Home from "./components/Home";
 import About from "./components/About";
-
+import Study from "./components/Study";
 
 class Container extends Component {
   components = {
     Home : Home,
-    About : About
+    About : About,
+    Study : Study
   };
   render() {
     const RenderComponent = this.components[this.props.menuSelected];
