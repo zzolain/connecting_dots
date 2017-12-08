@@ -1,9 +1,32 @@
-import React from "react";
+import React, { Component } from "react";
 import "./style.css";
-
 import Dots from "../Dots/index";
 
-export default function Hello() {
+export default class Hello extends Component {
+  scrollYAnimation(){
+    const elemHelloWrapper = document.querySelectorAll(".hello__wrapper");
+    let yPosition = 0;
+
+    for( let i = 0; i < elemHelloWrapper.length; i++){
+      yPosition = elemHelloWrapper[i].getBoundingClientRect().y;
+
+      if (yPosition > window.innerHeight * 0.7){
+        elemHelloWrapper[i].classList.remove("hello__wrapper--active");
+      } else {
+        elemHelloWrapper[i].classList.add("hello__wrapper--active");
+      }
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.scrollYAnimation);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.scrollYAnimation);
+  }
+
+  render(){  
   return (
     <div className="hello">
       <div className="hello__wrapper">
@@ -32,7 +55,7 @@ export default function Hello() {
         </div>
       </div>
       <div className="hello__wrapper">
-      <p className="hello__text__title">Trust that the dots will connect</p>
+      <div className="hello__text__title"><span>Trust that the dots will connect</span></div>
         <div className="hello__text__wrapper">
           <div className="hello__text--korean">
             <p>
@@ -49,7 +72,7 @@ export default function Hello() {
 
           <div className="hello__text--english">
             <p>
-              I droped out design school in the middle of sophomore and ended up
+              I droped out design school in the middle of junior and ended up
               to major in psychology.
             </p>
             <p>
@@ -57,7 +80,7 @@ export default function Hello() {
               development.
             </p>
             <p>
-              However, I've connect them one by one, the dots I have gone
+              However, I've connected them one by one, the dots I have gone
               through.
             </p>
             <p>Like Steve Jobs did before.</p>
@@ -70,11 +93,27 @@ export default function Hello() {
           <p>SO YOU HAVE TO TRUST THAT THE DOTS WILL SOMEHOW</p>
           <p>CONNECT IN YOUR FUTURE.</p>
           <p> Steve Jobs</p>
+        </div></div>
+        
+        <div className="hello__wrapper">
+        <div className="hello__text__title"><span>How To Live?<br />Do What I want to do</span></div>
+        <div className="hello__text__wrapper">
+          <div className="hello__text--korean">
+            <p>어떻게 살아야 할까?라는 물음을 가졌고, '내'가 좋아하는 일을 하며 살기로 결심 했습니다.</p>
+            <p>물론 그게 코딩이었구요.</p>
+            <p>훌륭한 글귀들이 선생이 되었고, 인생 역전 다큐멘터리 영화들은 희망이 되어주었습니다. </p>
+          </div>
+          <div className="hello__text--english">
+            <p>
+              I had a question to myself about how to live
+            and I decieded to live by doing what I want to do.</p>
+            <p>Yep, of course It was coding.</p>
+            <p>Great sentences of wise books guided me and drama films based on true story got me hopeful spirit.</p>
+          </div>
         </div>
       </div>
-
       <div className="hello__wrapper">
-        <p className="hello__text__title">Thanks to you</p>
+        <div className="hello__text__title"><span>It was All <br />Thanks To you</span></div>
         <div className="hello__text__wrapper">
           <div className="hello__text--korean">
             <p>개발을 시작할 수 있도록 용기와 힘을 주신 분들이 많습니다.</p>
@@ -94,4 +133,4 @@ export default function Hello() {
       <Dots />
     </div>
   );
-}
+}}

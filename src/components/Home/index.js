@@ -45,9 +45,8 @@ export default class Home extends Component {
           <div className="home__skill">
             <span>JavaScript</span>
           </div>
-          <div className="home__skill">
-            <span>and</span>
-            <span> React</span>
+          <div className="home__skill"><span>&&</span>
+            <p> React</p>
           </div>
         </div>
       </div>

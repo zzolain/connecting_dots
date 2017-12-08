@@ -86,17 +86,19 @@ class Menu extends Component {
         >
           <p>
             {this.renderMenuText(this.props.menuState.leftMenu)}
-            <br />
+            </p>
+            <span>
             {this.props.menuState.leftMenu}
-          </p>
+          </span>
         </div>
         <div
           className="global-menu__side global-menu__side--right"
           onClick={() => this.props.selectMenu(this.props.menuState.rightMenu)}
         >
-          <p>
+          <span>
             {this.props.menuState.rightMenu}
-            <br />
+            </span>
+            <p>
             {this.renderMenuText(this.props.menuState.rightMenu)}
           </p>
         </div>

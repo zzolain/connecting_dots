@@ -194,6 +194,12 @@
 .home__skill {
     text-align: center;
     width: 33%;
+    margin-bottom: 1rem;
+}
+
+.home__skill p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
 }
 
 .home--active .home__skills {
