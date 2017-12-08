@@ -1,6 +1,7 @@
 //Actions
 const SELECT_MENU = "SELECT_MENU";
 
+
 // Action Creators
 function selectMenu(menuSelected) {
   return {
@@ -9,6 +10,8 @@ function selectMenu(menuSelected) {
   };
 }
 
+
+
 // Reducer
 const menuState = {
   menuSelected: "Home",
@@ -16,14 +19,16 @@ const menuState = {
   rightMenu: "Study"
 };
 
+
 const initialState = {
-  menuState: menuState
+    menuState: menuState
 };
 
 function reducer(state = initialState, action) {
   switch (action.type) {
     case SELECT_MENU:
       return applyMenuSelected(state, action.payload);
+
 
     default:
       return state;
@@ -66,10 +71,11 @@ function applyMenuSelected(state, payload) {
   }
 }
 
+
 // Export Action Creators
 
 const actionCreators = {
-  selectMenu
+  selectMenu,
 };
 
 export { actionCreators };
