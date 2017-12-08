@@ -11,28 +11,10 @@
     color: white;
 }
 
-.study__list ul{
-    color: rgb(92, 92, 92);
-    display: flex;
-    justify-content: center;
-}
-
-.study__list li {
-    cursor: pointer;
-    margin: 1.5rem;
-    transition: all .8s ease-in-out;
-    list-style: none;
-}
-
-.study__list li:hover {
-    color: tomato;
-}
-
 .study__container {
     width: 100vw;
     display: flex;
     justify-content: center;
-    margin-bottom: 30vh;
 }
 .study__wrapper {
     width: 100%;
@@ -46,10 +28,10 @@
     padding: 0 5vw;
 }
 .study__thumnail--wrapper .study__thumnail--image {
-    max-width: 320px;
-    max-height: 600px;
-    width: calc(190px + 10vw);
-    height: calc(380px + 15vw);
+    max-width: 450px;
+    width: calc(250px + 10vw);
+    height: 250px;
+    background-image: url("../../images/test-image.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
@@ -57,26 +39,16 @@
 }
 
 .study__thumnail--wrapper .study__thumnail--title {
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     text-align: center;
     color: white;
-    font-size: .8rem;
 }
 
 .study__thumnail__text {
-    padding-top: 2.5rem;
     color: white;
     font-size: .8rem;
-    line-height: 1.8rem;
+    line-height: 1.5rem;
     font-weight: 100;
-    width: calc(150px + 10vw);
-    max-width: 350px;
+    width: calc(250px + 10vw);
 }
 
-.study__thumnail__text a {
-    color: #858585;
-}
-
-.study__thumnail__text a:hover {
-    color: tomato;
-}

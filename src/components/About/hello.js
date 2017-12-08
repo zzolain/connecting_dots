@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./style.css";
 import Dots from "../Dots/index";
 
-
 export default class Hello extends Component {
   scrollYAnimation(){
     const elemHelloWrapper = document.querySelectorAll(".hello__wrapper");
