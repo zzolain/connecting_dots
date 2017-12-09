@@ -19,7 +19,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://zzolain.github.io/",
+  "homepage": "https://zzolain.github.io",
   "devDependencies": {
     "gh-pages": "^1.1.0"
   }

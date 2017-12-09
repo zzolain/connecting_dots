@@ -13,13 +13,20 @@
 
 .study__list ul{
     color: rgb(92, 92, 92);
+    font-size: .7rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 850px;
+    border-left: 1px solid salmon;
+    border-right: 1px solid salmon;
+    margin-left: 2vw;
+    margin-right: 2vw;
 }
 
 .study__list li {
+    margin: .5rem 1rem;
     cursor: pointer;
-    margin: 1.5rem;
     transition: all .8s ease-in-out;
     list-style: none;
 }
@@ -32,22 +39,56 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-    margin-bottom: 30vh;
+    margin-bottom: 20vh;
 }
 .study__wrapper {
-    width: 100%;
+    position: relative;
+    max-width: 900px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: calc(2vw + 20px);
+    padding: calc(2vw + 20px);
+}
+
+.study__wrapper .study__arrow--previous {
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 44px;
+    height: 44px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+
+}
+
+.study__wrapper .study__arrow--next {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 40%;
+    width: 44px;
+    height: 44px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: all 1.5s ease-in-out;
+}
+
+.study__wrapper .study__arrow--previous:hover,
+.study__wrapper .study__arrow--next:hover {
+    color: tomato;
 }
 
 .study__wrapper .study__thumnail--wrapper {
-    padding: 0 5vw;
+    padding: 0 2vw;
 }
+
 .study__thumnail--wrapper .study__thumnail--image {
-    max-width: 320px;
-    max-height: 600px;
+    max-width: 265px;
+    max-height: 500px;
     width: calc(190px + 10vw);
     height: calc(380px + 15vw);
     background-repeat: no-repeat;
@@ -64,9 +105,9 @@
 }
 
 .study__thumnail__text {
-    padding-top: 2.5rem;
+    padding: 2.5rem 2vw;
     color: white;
-    font-size: .8rem;
+    font-size: .7rem;
     line-height: 1.8rem;
     font-weight: 100;
     width: calc(150px + 10vw);
@@ -79,4 +120,17 @@
 
 .study__thumnail__text a:hover {
     color: tomato;
+}
+
+
+@media screen and (max-width: 700px){
+    .study__wrapper .study__arrow--next {
+        right: 8%;
+        top: 30%;
+
+    }
+    .study__wrapper .study__arrow--previous {
+        left: 8%;
+        top: 30%;
+    }
 }

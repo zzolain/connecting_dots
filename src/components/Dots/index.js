@@ -58,7 +58,7 @@ export default class About extends Component {
         "Study Group with Back-end developers and designers.",
         "NomadCoders.co React/React Native On-line course.",
         "StudioMeal.com Interaction web Workshop season 1 in Jeju.",
-        "Nov 24. Got a certificate of Engineer Information Processing."
+        "Nov 24. A certificate of Engineer Information Processing."
       ]
     }
   ];

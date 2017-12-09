@@ -78,7 +78,7 @@ class Menu extends Component {
         </button>
 
         <nav className="global-menu">
-          <ul>{this.linkList()}</ul>
+          <ul className="global-menu__background">{this.linkList()}</ul>
         </nav>
         <div
           className="global-menu__side global-menu__side--left"

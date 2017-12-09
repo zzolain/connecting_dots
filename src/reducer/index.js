@@ -1,7 +1,6 @@
 //Actions
 const SELECT_MENU = "SELECT_MENU";
 
-
 // Action Creators
 function selectMenu(menuSelected) {
   return {
@@ -9,8 +8,6 @@ function selectMenu(menuSelected) {
     payload: menuSelected
   };
 }
-
-
 
 // Reducer
 const menuState = {

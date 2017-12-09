@@ -2,14 +2,12 @@ import React, { Component } from "react";
 import "./style.css";
 
 export default class Home extends Component {
-
   componentDidMount() {
     const elemHome = document.querySelector(".home");
-    setTimeout(
-      () => {elemHome.classList.add("home--active");}, 1000
-    )
-      
-    }
+    setTimeout(() => {
+      elemHome.classList.add("home--active");
+    }, 1000);
+  }
 
   render() {
     return (
@@ -45,7 +43,8 @@ export default class Home extends Component {
           <div className="home__skill">
             <span>JavaScript</span>
           </div>
-          <div className="home__skill"><span>&&</span>
+          <div className="home__skill">
+            <span>&&</span>
             <p> React</p>
           </div>
         </div>
