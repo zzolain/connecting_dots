@@ -78,12 +78,12 @@ export default class Project extends Component {
           <p>what I've done</p>
         </div>
         <div className="study__list">
-          <ul>
+          
             <StudyList
               studies={this.studies}
               selectStudy={selectedStudy => this.setState({ selectedStudy })}
             />
-          </ul>
+          
         </div>
         <StudyDetail
           selectedStudy={this.state.selectedStudy}
