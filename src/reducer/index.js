@@ -1,5 +1,6 @@
 //Actions
 const SELECT_MENU = "SELECT_MENU";
+const NAVIGATE_DIRECTION = "NEVIGATE_DIRECTION"
 
 // Action Creators
 function selectMenu(menuSelected) {
@@ -7,6 +8,13 @@ function selectMenu(menuSelected) {
     type: SELECT_MENU,
     payload: menuSelected
   };
+}
+
+function navigateDirection(direction) {
+  return {
+    type: NAVIGATE_DIRECTION,
+    payload: direction
+  }
 }
 
 // Reducer
@@ -18,7 +26,8 @@ const menuState = {
 
 
 const initialState = {
-    menuState: menuState
+    menuState: menuState,
+    navigateDirection : 'initial'
 };
 
 function reducer(state = initialState, action) {
@@ -26,6 +35,8 @@ function reducer(state = initialState, action) {
     case SELECT_MENU:
       return applyMenuSelected(state, action.payload);
 
+    case NAVIGATE_DIRECTION:
+    return applyNavigateDirection(state, action.payload);
 
     default:
       return state;
@@ -38,6 +49,7 @@ function applyMenuSelected(state, payload) {
   switch (payload) {
     case "Home":
       return {
+        ...state,
         menuState: {
           menuSelected: "Home",
           leftMenu: "About",
@@ -47,6 +59,7 @@ function applyMenuSelected(state, payload) {
 
     case "About":
       return {
+        ...state,
         menuState: {
           menuSelected: "About",
           leftMenu: "Study",
@@ -56,6 +69,7 @@ function applyMenuSelected(state, payload) {
 
     case "Study":
       return {
+        ...state,
         menuState: {
           menuSelected: "Study",
           leftMenu: "Home",
@@ -68,11 +82,18 @@ function applyMenuSelected(state, payload) {
   }
 }
 
+function applyNavigateDirection(state, payload){
+  return {
+    ...state,
+    navigateDirection: payload
+  }
+}
 
 // Export Action Creators
 
 const actionCreators = {
   selectMenu,
+  navigateDirection
 };
 
 export { actionCreators };

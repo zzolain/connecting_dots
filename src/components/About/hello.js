@@ -107,7 +107,7 @@ export default class Hello extends Component {
           <div className="hello__text--english">
             <p>
               I had a question to myself about how to live
-            and I decieded to live by doing what I want to do.</p>
+            and I decided to live by doing what I want to do.</p>
             <p>Yep, of course It was coding.</p>
             <p>Great sentences of wise books guided me and drama films based on true story got me hopeful spirit.</p>
           </div>

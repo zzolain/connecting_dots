@@ -82,7 +82,10 @@ class Menu extends Component {
         </nav>
         <div
           className="global-menu__side global-menu__side--left"
-          onClick={() => this.props.selectMenu(this.props.menuState.leftMenu)}
+          onClick={() => {
+            this.props.selectMenu(this.props.menuState.leftMenu);
+            this.props.navigateDirection('left');
+          }}
         >
           <p>
             {this.renderMenuText(this.props.menuState.leftMenu)}
@@ -93,7 +96,10 @@ class Menu extends Component {
         </div>
         <div
           className="global-menu__side global-menu__side--right"
-          onClick={() => this.props.selectMenu(this.props.menuState.rightMenu)}
+          onClick={() => {
+            this.props.selectMenu(this.props.menuState.rightMenu);
+            this.props.navigateDirection('right');
+          }}
         >
           <span>
             {this.props.menuState.rightMenu}
@@ -113,7 +119,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    selectMenu: bindActionCreators(actionCreators.selectMenu, dispatch)
+    selectMenu: bindActionCreators(actionCreators.selectMenu, dispatch),
+    navigateDirection: bindActionCreators(actionCreators.navigateDirection, dispatch)
   };
 }
 
