@@ -35,8 +35,8 @@ export default class StudyDetail extends Component {
     const { title, description, url, img } = this.state.selectedStudy;
     const { animate, direction } = this.state;
     const animation = animate
-      ? direction === "left" ? "bounceOutLeft" : "bounceOutRight"
-      : direction === "left" ? "bounceInRight" : "bounceInLeft";
+      ? direction === "left" ? "studyOutLeft" : "studyOutRight"
+      : direction === "left" ? "studyInRight" : "studyInLeft";
 
     const bgImageStyle = {
       backgroundImage: `url(${img})`

@@ -140,23 +140,23 @@
 }
 
 
-.bounceInLeft .study__content-wrapper {
-   animation: bounceInLeft 2.5s
+.studyInLeft .study__content-wrapper {
+   animation: studyInLeft 2.5s
 }
-.bounceOutLeft .study__content-wrapper{
-  animation: bounceOutLeft 1.5s
+.studyOutLeft .study__content-wrapper{
+  animation: studyOutLeft 1.5s
 }
-.bounceInRight .study__content-wrapper{
-  animation: bounceInRight 2.5s
+.studyInRight .study__content-wrapper{
+  animation: studyInRight 2.5s
 }
-.bounceOutRight .study__content-wrapper{
-  animation: bounceOutRight 1.5s
+.studyOutRight .study__content-wrapper{
+  animation: studyOutRight 1.5s
 }
 
 
 
   
-  @keyframes bounceInLeft {
+  @keyframes studyInLeft {
     0% {
       opacity: 0;
       -webkit-transform: translate3d(-10%, 0, 0);
@@ -177,7 +177,7 @@
   }
   
 
-  @-webkit-keyframes bounceOutLeft {
+  @-webkit-keyframes studyOutLeft {
     20% {
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);
@@ -190,7 +190,7 @@
     }
   }
   
-  @keyframes bounceOutLeft {
+  @keyframes studyOutLeft {
     20% {
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);
@@ -207,7 +207,7 @@
   
  
   
-  @-webkit-keyframes bounceInRight {
+  @-webkit-keyframes studyInRight {
 
     0% {
       opacity: 0;
@@ -225,7 +225,7 @@
     }
   }
   
-  @keyframes bounceInRight {
+  @keyframes studyInRight {
 
     0% {
       opacity: 0;
@@ -248,7 +248,7 @@
   
 
   
-  @-webkit-keyframes bounceOutRight {
+  @-webkit-keyframes studyOutRight {
     20% {
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);
@@ -261,7 +261,7 @@
     }
   }
   
-  @keyframes bounceOutRight {
+  @keyframes studyOutRight {
     20% {
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);
