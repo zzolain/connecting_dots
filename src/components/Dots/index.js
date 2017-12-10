@@ -32,7 +32,7 @@ export default class About extends Component {
       date: "2003",
       dots: [
         'I beleived I needed to study design in order to become "someone" who builds web pages.',
-        "Ki-tae, my best class mate, was in an art group.",
+        "Ki-tae, my best class mate, was in an art group of the school.",
         "He let me see Taehong Park, the best art teacher ever.",
         "Became a huge fan of him and joined his art group.",
         "Entered Visual Design department of Incheon National University. 2005"
@@ -43,7 +43,7 @@ export default class About extends Component {
       date: "2009 - 2011",
       dots: [
         "It was not as I expected how life was going as a designer.",
-        "Made a journey to Rome to have some break for a month.",
+        "Made a journey to Rome in Italy to have some break for a month.",
         "I totally forgot what I wanted to become and decided to have more time to know who I am and really want to be.",
         "Entered Pusan National University Psychology dep. Feb 2011.",
         "Hooked on Congnitive psychology, Human Factors(Ergonomics) and UI/UX."
@@ -58,7 +58,9 @@ export default class About extends Component {
         "Study Group with Back-end developers and designers.",
         "NomadCoders.co React/React Native On-line course.",
         "StudioMeal.com Interaction web Workshop season 1 in Jeju.",
-        "Nov 24. A certificate of Engineer Information Processing."
+        "Nov 24. A certificate of Engineer Information Processing.",
+        "Udemy.com Modern React with Redux",
+        "Dec 10. My lovely First Portfolio Web Application"
       ]
     }
   ];

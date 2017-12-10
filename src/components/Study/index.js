@@ -23,22 +23,22 @@ export default class Project extends Component {
       title: "Youtube Searcher",
       img: "https://i.imgur.com/ZDbxkVn.png",
       description:
-        "첫 React 실습 예제. 검색어를 입력하면 검색 항목들이 결과로 나타나고 그 중 하나를 클릭하면 중앙 화면이 해당 비디오로 바뀝니다. 한 페이지 안에서 특정 부분만 정보가 실시간으로 바뀌는 것을 보고 기절초풍! 사실 사용하면서는 당연하다는 듯이 여겼던 기능이지만, 개발을 시작한 뒤로 새삼 신기하고 경이롭게 다가오는 기능, 기술들이 많습니다. 세상에는 정말 천재들이 가득합니다...",
+        "첫 React 실습 예제. 검색어를 입력하면 검색 항목들이 결과로 나타나고 그 중 하나를 클릭하면 중앙 화면이 해당 비디오로 바뀝니다. 한 페이지 안에서 특정 부분만 정보가 실시간으로 바뀌는 것을 보고 기절초풍! 사실 사용자 입장에서는 당연하다는 듯이 여기고 사용했던 기능이지만, 개발을 시작한 뒤로 새삼 신기하고 경이롭게 다가오는 기능, 기술들이 많습니다. 세상에는 정말 천재들이 가득합니다...",
       url: "https://study-react-youtube-searcher.herokuapp.com/"
     },
     {
       title: "Interacitve Web App",
       img: "https://i.imgur.com/1DB7xoQ.png",
       description:
-        "페이스북 페이지 '1분 코딩'에서 주최한 인터랙티브 웹 코딩 워크샵에 참여하여 만든 결과물. Javascript 문법만 알았지, DOM을 'Get'하여 본 적도 없는 제가 큰 가르침을 받고 온 워크샵입니다. Event를 등록하고 호출하는 방법 등을 배우고, 원하는 Animation을 순수 Javascript로 구현하기 위해 알고리즘을 고민하고 찾아가는 과정 등을 경험할 수 있었습니다. 이 결과물은 About[BIOGRAPHY]에 담겨 있습니다. 아래 링크는 '1분 코딩' 워크샵 안내 페이지이며, 이 곳에서 저를 만나보실 수 있습니다 :)",
+        "페이스북 페이지 '1분 코딩'에서 주최한 인터랙티브 웹 코딩 워크샵에 참여하여 만든 결과물. Javascript 문법만 알았지, DOM을 'Get'하여 본 적도 없는 제가 큰 가르침을 받고 온 워크샵입니다. Event를 등록,  호출하는 방법, 브라우저의 상태 값들을 알아내어 값으로 이용하는 방법 등을 배웠습니다. 또한, 원하는 Animation을 순수 Javascript로 구현하기 위하여 알고리즘을 고민하고, 그것을 찾아가는 과정 등을 경험하면서 좀 더 수학적이고 효과적인 코드를 짤 수 있게 되었습니다. 이 때의 결과물은 About [BIOGRAPHY]에 담겨 있습니다. 아래 링크는 '1분 코딩' 워크샵 안내 페이지이며, 이 곳에서 저를 만나보실 수 있습니다 :)",
       url: "http://www.studiomeal.com/about/workshop"
     },
     {
       title: "Dev-log",
       img: "https://i.imgur.com/h11aZUj.png",
       description:
-        "Markdown의 깔끔한 매력에 푹 빠졌었지요. Markdown 형식으로 작성한 글을 바로 포스팅할 수 있다기에 시작한 Github page. 하드코딩으로 마크업을 하고 Hexo라는 정적 페이지 생성기를 이용하여 배포했습니다. 개발 기록을 남기기 위해 만든 페이지인데, 어느 순간부터 본래 취지를 벗어나 포스팅을 위한 글을 적고 있는 자신을 발견하고 잠시 멈춘 상태입니다.",
-      url: "https://zzolain.github.io/blog/"
+        "Markdown의 깔끔한 매력에 푹 빠졌었지요. Markdown 형식으로 작성한 글을 바로 포스팅할 수 있다기에 시작한 Github page. Hexo라는 정적 페이지 생성기를 이용하여 배포했습니다. 직접 테마를 만들어보겠다고 주구장창 마크업을 했더랬지요. Git 또한 익숙치 않아 Commit 수가 100개를 넘어가는 쑥쓰부끄 페이지입니다. 페이지의 목적은 개발 기록을 남기기 위한 것이었는데, 어느 순간부터 본래 취지를 벗어나 포스팅을 위한 글을 적고 있는 자신을 발견하고 잠시 멈춘 상태입니다.",
+      url: "https://zzolain-blog.herokuapp.com/"
     },
     {
       title: "Kakao Destop Clone",
