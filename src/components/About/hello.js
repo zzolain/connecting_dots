@@ -20,6 +20,7 @@ export default class Hello extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0);
     const elemHome = document.querySelector(".hello__wrapper");
     setTimeout(() => {
       elemHome.classList.add("hello__wrapper--active");

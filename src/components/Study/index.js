@@ -82,6 +82,10 @@ export default class Project extends Component {
     }
   }
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
+
    render() {
     return (
       <div className="study">
