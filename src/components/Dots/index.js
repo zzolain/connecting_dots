@@ -21,7 +21,7 @@ export default class About extends Component {
       date: "1999",
       dots: [
         "Pikachu.HTML",
-        "Friends enjoyed my website and left messages. I was really happy with them.",
+        "Friends enjoyed my website and left messages. I was really happy with it.",
         "Learned Adobe Photoshop & Illustrator to edit website images.",
         "My high school teacher looked for an assistant who can deal with Photoshop and I was the very student.",
         "Thanks to it, I won a prize for the computer youngster in early rising."
@@ -33,7 +33,7 @@ export default class About extends Component {
       dots: [
         'I beleived I needed to study design in order to become "someone" who builds web pages.',
         "Ki-tae, my best class mate, was in an art group of the school.",
-        "He let me see Taehong Park, the art group teacher and the best art teacher ever.",
+        "He let me see Taehong Park, the art group teacher (and the best art teacher ever).",
         "Became a huge fan of him and joined his art group.",
         "Entered Visual Design department of Incheon National University. 2005"
       ]
@@ -43,9 +43,9 @@ export default class About extends Component {
       date: "2009 - 2011",
       dots: [
         "It was not as I expected how life was going as a designer.",
-        "Made a journey to Rome in Italy to have some break for a month.",
+        "Made a journey to Rome in Italy to have some break for a month and it came to be a milestone.",
         "I totally forgot what I wanted to become and decided to have more time to know who I am and really want to be.",
-        "Entered Pusan National University Psychology dep. Feb 2011.",
+        "Dropped out the art school and entered Pusan National University Psychology dep. Feb 2011.",
         "Hooked on Congnitive psychology, Human Factors(Ergonomics) and UI/UX."
       ]
     },

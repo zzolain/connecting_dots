@@ -6,6 +6,13 @@ import StudyDetail from "./study_detail";
 export default class Project extends Component {
   studies = [
     {
+      title: "Connecting dots",
+      img: "https://preview.ibb.co/gnAxhw/connecting_dots.png",
+      description:
+        "포트폴리오를 담은 웹어플리케이션. 사실 이 앱 자체가 그간 공부한 기술들을 총 동원하여 만든 포트폴리오입니다. 대단한 코드를 짠 것은 아니지만 React, Redux를 적극 활용하여 보았고, Animation은 CSS와 vanilla script로 구현했습니다. 차후엔 React-motion도 적용해 볼 예정입니다. 최선을 다하여 만들었기에 넘나 사랑스러운 나머지 하루에 300번씩 접속해서 가만히 바라보고 있습니다(...)",
+      url: "https://zzolain.github.io/"
+    },
+    {
       title: "Kakao Desktop Clone",
       img: "https://preview.ibb.co/mQx4Ub/kakao_clone.png",
       description:
@@ -39,13 +46,6 @@ export default class Project extends Component {
       description:
         "향후 5일의 날씨 정보(온도, 기압, 습도)를 그래프로 표시하는 앱. fetchReact와 Redux를 공부하기 위한 예제이며 Udemy를 통해 학습 했습니다. 날씨 API를 Redux로 fetch할 때 Promise를 관리하는 middle ware에 대한 개념을 접할 수 있었습니다.",
       url: "https://study-react-5days-weather.herokuapp.com/"
-    },
-    {
-      title: "Connecting dots",
-      img: "https://preview.ibb.co/gnAxhw/connecting_dots.png",
-      description:
-        "포트폴리오를 담은 웹어플리케이션. 사실 이 앱 자체가 그간 공부한 기술들을 총 동원하여 만든 포트폴리오입니다. 대단한 코드를 짠 것은 아니지만 React, Redux를 적극 활용하여 보았고, Animation은 CSS와 vanilla script로 구현했습니다. 차후엔 React-motion도 적용해 볼 예정입니다. 최선을 다하여 만들었기에 넘나 사랑스러운 나머지 하루에 300번씩 접속해서 가만히 바라보고 있습니다(...)",
-      url: "https://zzolain.github.io/"
     }
 
 
