@@ -105,10 +105,11 @@
 
 .global-menu__side {
   position: fixed;
-  width: 10rem;
   color: #727272;
   text-align: center;
   top: 50%;
+  margin-right: calc(1vw + 10px);
+  margin-left: calc(1vw + 10px);
 }
 
 .global-menu__side:hover {
@@ -118,21 +119,19 @@
 }
 
 .global-menu__side.global-menu__side--left {
+  transform: translate3d(-50%, 0, 0) rotateZ(90deg);
   left: calc(2vw + 10px);
-  transform-origin: left bottom;
-  transform: rotateZ(90deg) translate3d(-65%, 0, 0);
 
 }
 
 .global-menu__side.global-menu__side--right {
+  transform: translate3d(50%, 0, 0) rotateZ(90deg);
   right: calc(2vw + 10px);
-  transform-origin: right top;
-  transform: rotateZ(90deg) translate3d(50%, 0, 0);
 }
 
 @media screen and (max-width: 700px){
   .global-menu__side {
-    top: 92%;
+    top: 90%;
   }
   .global-menu__side p {
     display: none;
