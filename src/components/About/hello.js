@@ -8,7 +8,7 @@ export default class Hello extends Component {
     const elemHelloWrapper = document.querySelectorAll(".hello__wrapper");
     let yPosition = 0;
 
-    for( let i = 0; i < elemHelloWrapper.length; i++){
+    for( let i = 1; i < elemHelloWrapper.length; i++){
       yPosition = elemHelloWrapper[i].getBoundingClientRect().y;
 
       if (yPosition > window.innerHeight * 0.01){
