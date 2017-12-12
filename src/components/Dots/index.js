@@ -23,7 +23,7 @@ export default class About extends Component {
         "Pikachu.HTML",
         "Friends enjoyed my website and left messages. I was really happy with them.",
         "Learned Adobe Photoshop & Illustrator to edit website images.",
-        "My high school teacher looked for an assistant who can deal with Photoshop and I was in.",
+        "My high school teacher looked for an assistant who can deal with Photoshop and I was the very student.",
         "Thanks to it, I won a prize for the computer youngster in early rising."
       ]
     },
@@ -33,7 +33,7 @@ export default class About extends Component {
       dots: [
         'I beleived I needed to study design in order to become "someone" who builds web pages.',
         "Ki-tae, my best class mate, was in an art group of the school.",
-        "He let me see Taehong Park, the best art teacher ever.",
+        "He let me see Taehong Park, the art group teacher and the best art teacher ever.",
         "Became a huge fan of him and joined his art group.",
         "Entered Visual Design department of Incheon National University. 2005"
       ]

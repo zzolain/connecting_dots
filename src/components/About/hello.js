@@ -11,7 +11,7 @@ export default class Hello extends Component {
     for( let i = 0; i < elemHelloWrapper.length; i++){
       yPosition = elemHelloWrapper[i].getBoundingClientRect().y;
 
-      if (yPosition > window.innerHeight * 0.7){
+      if (yPosition > window.innerHeight * 0.01){
         elemHelloWrapper[i].classList.remove("hello__wrapper--active");
       } else {
         elemHelloWrapper[i].classList.add("hello__wrapper--active");
@@ -20,6 +20,11 @@ export default class Hello extends Component {
   }
 
   componentDidMount() {
+    const elemHome = document.querySelector(".hello__wrapper");
+    setTimeout(() => {
+      elemHome.classList.add("hello__wrapper--active");
+    }, 1000);
+
     window.addEventListener("scroll", this.scrollYAnimation);
   }
 
@@ -77,7 +82,7 @@ export default class Hello extends Component {
               to major in psychology.
             </p>
             <p>
-              I have lived a life of things that seem to have nothing to do with
+              I have lived a life that seems to have nothing to do with
               development.
             </p>
             <p>
