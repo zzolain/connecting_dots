@@ -110,12 +110,12 @@
   top: 50%;
   margin-right: calc(1vw + 10px);
   margin-left: calc(1vw + 10px);
+  transition: all .5s;
 }
 
 .global-menu__side:hover {
   cursor: pointer;
   color: tomato;
-  transition: all .3s;
 }
 
 .global-menu__side.global-menu__side--left {

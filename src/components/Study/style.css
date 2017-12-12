@@ -42,8 +42,9 @@
     margin-bottom: 20vh;
 }
 .study__wrapper {
-    position: relative;
     max-width: 900px;
+    
+    position: relative;
     
 }
 
@@ -54,37 +55,7 @@
     padding: calc(2vw + 20px);
 }
 
-.study__wrapper .study__arrow--left {
-    text-align: left;
-    position: absolute;
-    left: 0;
-    top: 40%;
-    width: 44px;
-    height: 44px;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    transition: all .5s ease-in-out;
 
-}
-
-.study__wrapper .study__arrow--right {
-    text-align: right;
-    position: absolute;
-    right: 0;
-    top: 40%;
-    width: 44px;
-    height: 44px;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    transition: all 1.5s ease-in-out;
-}
-
-.study__wrapper .study__arrow--left:hover,
-.study__wrapper .study__arrow--right:hover {
-    color: tomato;
-}
 
 .study__content-wrapper .study__thumnail--wrapper {
     padding: 0 2vw;
@@ -99,6 +70,38 @@
     background-position: 50% 50%;
     background-size: cover;
     border-radius: 10px;
+}
+
+.study__arrow--left {
+  text-align: left;
+  position: absolute;
+  left: 0;
+  top: 250px;
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+
+}
+
+.study__arrow--right {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  top: 250px;
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: all 1.5s ease-in-out;
+}
+
+.study__arrow--left:hover,
+.study__arrow--right:hover {
+  color: tomato;
 }
 
 .study__thumnail--wrapper .study__thumnail--title {
@@ -130,12 +133,10 @@
 @media screen and (max-width: 700px){
     .study__wrapper .study__arrow--right {
         right: 8%;
-        top: 30%;
 
     }
     .study__wrapper .study__arrow--left {
         left: 8%;
-        top: 30%;
     }
 }
 
