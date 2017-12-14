@@ -7,14 +7,14 @@ export default class Project extends Component {
   studies = [
     {
       title: "Connecting dots",
-      img: "https://preview.ibb.co/gnAxhw/connecting_dots.png",
+      img: "https://i.imgur.com/jiKyhSd.png",
       description:
         "포트폴리오를 담은 웹어플리케이션. 사실 이 앱 자체가 그간 공부한 기술들을 총 동원하여 만든 포트폴리오입니다. 대단한 코드를 짠 것은 아니지만 React, Redux를 적극 활용하여 보았고, Animation은 CSS와 vanilla script로 구현했습니다. 차후엔 React-motion도 적용해 볼 예정입니다. 최선을 다하여 만들었기에 넘나 사랑스러운 나머지 하루에 300번씩 접속해서 가만히 바라보고 있습니다(...)",
       url: "https://zzolain.github.io/"
     },
     {
       title: "Kakao Desktop Clone",
-      img: "https://preview.ibb.co/mQx4Ub/kakao_clone.png",
+      img: "https://i.imgur.com/zlQLGNd.png",
       description:
         "HTML과 CSS 공부를 위해 카카오톡 앱 디자인을 따라해 본 Nomad Academy의 예제. 특히 CSS의 Flex 속성을 충분히 익히고 다룰 수 있어서 좋았습니다. 또한 CSS의 Display 속성 값 종류인 in-line과 block의 차이에 대해 익힐 수 있었고, 전체적으로 기본 페이지 구조를 구현하는데 큰 도움이 되었던 예제입니다.",
       url: "https://zzolain.github.io/Kakao-Clone-App/"
