@@ -17,7 +17,7 @@ export default class Project extends Component {
       img: "https://i.imgur.com/zlQLGNd.png",
       description:
         "HTML과 CSS 공부를 위해 카카오톡 앱 디자인을 따라해 본 Nomad Academy의 예제. 특히 CSS의 Flex 속성을 충분히 익히고 다룰 수 있어서 좋았습니다. 또한 CSS의 Display 속성 값 종류인 in-line과 block의 차이에 대해 익힐 수 있었고, 전체적으로 기본 페이지 구조를 구현하는데 큰 도움이 되었던 예제입니다.",
-      url: "https://zzolain.github.io/Kakao-Clone-App/"
+      url: "https://kakao-clone.herokuapp.com/"
     },
     {
       title: "Dev-log",

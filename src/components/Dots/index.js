@@ -32,7 +32,7 @@ export default class About extends Component {
       date: "2003",
       dots: [
         'I beleived I needed to study design in order to become "someone" who builds web pages.',
-        "Ki-tae, my best class mate, was in an art group of the school.",
+        "Ki-tae, my best class mate, was a member of an art group in the high school.",
         "He let me see Taehong Park, the art group teacher (and the best art teacher ever).",
         "Became a huge fan of him and joined his art group.",
         "Entered Visual Design department of Incheon National University. 2005"
