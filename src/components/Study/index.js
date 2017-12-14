@@ -10,7 +10,7 @@ export default class Project extends Component {
       img: "https://i.imgur.com/jiKyhSd.png",
       description:
         "포트폴리오를 담은 웹어플리케이션. 사실 이 앱 자체가 그간 공부한 기술들을 총 동원하여 만든 포트폴리오입니다. 대단한 코드를 짠 것은 아니지만 React, Redux를 적극 활용하여 보았고, Animation은 CSS와 vanilla script로 구현했습니다. 차후엔 React-motion도 적용해 볼 예정입니다. 최선을 다하여 만들었기에 넘나 사랑스러운 나머지 하루에 300번씩 접속해서 가만히 바라보고 있습니다(...)",
-      url: "https://zzolain.github.io/"
+      url: "https://jinsol.kim/"
     },
     {
       title: "Kakao Desktop Clone",
