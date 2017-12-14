@@ -58,7 +58,7 @@
 .home__dot--center,
 .home__dot--right {
     position: absolute;
-    bottom: 46%;
+    bottom: 50%;
     width: 10%;
     height: 10%;
     background-color: whitesmoke;
@@ -69,19 +69,19 @@
 
 .home__dot--left {
     left: 0;
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 50%, 0);
     opacity: 0;
 }
 
 .home__dot--center {
     left: 50%;
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 50%, 0);
     opacity: 0;
 }
 
 .home__dot--right {
     right: 0;
-    transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 50%, 0);
     opacity: 0;
 }
 
@@ -105,7 +105,6 @@
     height: 50%;
     background-color: black;
     transform: translate3d(-20%, 0, 0);
-    -moz-transform: translate3d(-20%, 0, 0);
     z-index: 10;
 }
 .home__title {
@@ -146,17 +145,17 @@
 
 
 .home--active .home__dot--center {
-    transition-delay: 1.6s;
+    transition-delay: 1.4s;
     animation-delay: 0.8s;
 }
 
 .home--active .home__dot--right {
+    transition-delay: 2.2s;
     animation-delay: 1.6s;
-    transition-delay: 2.4s;
 }
 
 .home--active .home__connectingLine__mask--outer {
-    transform: rotateZ(-180deg);
+    transform: rotateZ(-179deg); 
     transform-origin: left bottom;
     transition: all 1.2s linear;
     transition-delay: 2.4s;
