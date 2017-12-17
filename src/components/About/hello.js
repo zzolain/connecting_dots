@@ -59,9 +59,9 @@ export default class Hello extends Component {
         {this.renderIntroduction(1)}
         <div className="hello__wrapper">
           <div className="hello__quote">
-            <p>"YOU CAN'T CONNECT THE DOTS LOOKING FORWARD;</p>
-            <p>YOU CAN ONLY CONNECT THEM LOOKING BACKWARDS.</p>
-            <p>SO YOU HAVE TO TRUST THAT THE DOTS WILL SOMEHOW</p>
+            <p>"YOU CAN'T CONNECT THE DOTS<br />LOOKING FORWARD;</p>
+            <p>YOU CAN ONLY CONNECT THEM<br />LOOKING BACKWARDS.</p>
+            <p>SO YOU HAVE TO TRUST<br/>THAT THE DOTS WILL SOMEHOW</p>
             <p>CONNECT IN YOUR FUTURE.</p>
             <p> Steve Jobs</p>
           </div>

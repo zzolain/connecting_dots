@@ -23,7 +23,7 @@ export default function About() {
     {
       title: 'It was All\nThanks To you',
       korean: '개발을 시작할 수 있도록\n용기와 힘을 주신 분들이 많습니다.\n이 글을 빌어 감사한 마음을 전합니다.\n\n고맙습니다.',
-      english: 'Thankfully,\nI have a lot of people who gave me\nCourage and power to be able to start development.\nI want to express my gratitude to them with this page.\nThank you.'
+      english: 'Thankfully,\nI have a lot of people who gave me courage\nAnd power to be able to start development.\nI want to express my gratitude to them\nWith this page.\nThank you.'
     }
   ]
 
