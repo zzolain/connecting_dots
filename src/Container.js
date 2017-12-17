@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './Container.css'
 
-import Menu from './components/Menu/menu'
+import Menu from './components/Menu'
 import Home from './components/Home'
 import About from './components/About'
 import Study from './components/Study'
@@ -13,7 +13,7 @@ class Container extends Component {
 
     this.state = {
       menuSelected: this.props.menuSelected,
-      animate: false,
+      startAnimation: false,
       navigateDirection: this.props.navigateDirection
     }
   }
@@ -28,13 +28,13 @@ class Container extends Component {
     if (this.props.menuSelected !== menuSelected) {
       this.setState({
         navigateDirection: navigateDirection,
-        animate: true
+        startAnimation: true
       })
 
       setTimeout(() => {
         this.setState({
           menuSelected: menuSelected,
-          animate: false
+          startAnimation: false
         })
       }, 1000)
       return
@@ -43,16 +43,15 @@ class Container extends Component {
 
   render() {
     const RenderComponent = this.components[this.state.menuSelected]
-    const { animate, navigateDirection } = this.state
+    const { startAnimation, navigateDirection } = this.state
     let animation = ''
-
-    if (animate && navigateDirection === 'right') {
+    if (startAnimation && navigateDirection === 'right') {
       animation = 'bounceOutLeft'
-    } else if (animate && navigateDirection !== 'right') {
-      animation = 'bountOutRight'
-    } else if (!animate && navigateDirection === 'right') {
-      animation = 'bounceInright'
-    } else if (!animate && navigateDirection !== 'right') {
+    } else if (startAnimation && navigateDirection !== 'right') {
+      animation = 'bounceOutRight'
+    } else if (!startAnimation && navigateDirection === 'right') {
+      animation = 'bounceInRight'
+    } else if (!startAnimation && navigateDirection !== 'right') {
       animation = 'bounceInLeft'
     }
 

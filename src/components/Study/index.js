@@ -26,7 +26,7 @@ export default class Project extends Component {
     {
       title: 'Interacitve Web App',
       img: 'https://i.imgur.com/1DB7xoQ.png',
-      description: '페이스북 페이지 "1분 코딩"에서 주최한 인터랙티브 웹 코딩 워크샵에 참여하여 만든 결과물. Javascript 문법만 알았지, DOM을 'Get'하여 본 적도 없는 제가 큰 가르침을 받고 온 워크샵입니다. Event를 등록,  호출하는 방법, 브라우저의 상태 값들을 알아내어 값으로 이용하는 방법 등을 배웠습니다. 또한, 원하는 Animation을 순수 Javascript로 구현하기 위하여 알고리즘을 고민하고, 그것을 찾아가는 과정 등을 경험하면서 좀 더 수학적이고 효과적인 코드를 짤 수 있게 되었습니다. 이 때의 결과물은 About [BIOGRAPHY]에 담겨 있습니다. 아래 링크는 '1분 코딩' 워크샵 안내 페이지이며, 이 곳에서 저를 만나보실 수 있습니다 :)',
+      description: '페이스북 페이지 "1분 코딩"에서 주최한 인터랙티브 웹 코딩 워크샵에 참여하여 만든 결과물. Javascript 문법만 알았지, DOM을 "Get"하여 본 적도 없는 제가 큰 가르침을 받고 온 워크샵입니다. Event를 등록,  호출하는 방법, 브라우저의 상태 값들을 알아내어 값으로 이용하는 방법 등을 배웠습니다. 또한, 원하는 Animation을 순수 Javascript로 구현하기 위하여 알고리즘을 고민하고, 그것을 찾아가는 과정 등을 경험하면서 좀 더 수학적이고 효과적인 코드를 짤 수 있게 되었습니다. 이 때의 결과물은 About - BIOGRAPHY 에 담겨 있습니다. 아래 링크는 "1분 코딩" 워크샵 안내 페이지이며, 이 곳에서 저를 만나보실 수 있습니다 :)',
       url: 'http://www.studiomeal.com/about/workshop'
     },
     {
@@ -41,46 +41,41 @@ export default class Project extends Component {
       description: '향후 5일의 날씨 정보(온도, 기압, 습도)를 그래프로 표시하는 앱. fetchReact와 Redux를 공부하기 위한 예제이며 Udemy를 통해 학습 했습니다. 날씨 API를 Redux로 fetch할 때 Promise를 관리하는 middle ware에 대한 개념을 접할 수 있었습니다.',
       url: 'https://study-react-5days-weather.herokuapp.com/'
     }
-
-
-
   ];
+
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       selectedStudy: this.studies[0],
-      direction : ''
-     };
+      direction: ''
+    }
   }
 
   selectAnotherStudy(direction) {
-    this.setState({ direction: direction });
-    let indexOfSelectedStudy = this.studies.indexOf(this.state.selectedStudy);
-
-
+    this.setState({ direction: direction })
+    let indexOfSelectedStudy = this.studies.indexOf(this.state.selectedStudy)
 
     if (direction === 'left' && indexOfSelectedStudy > 0) {
-      this.setState({ selectedStudy: this.studies[indexOfSelectedStudy - 1] });
+      this.setState({ selectedStudy: this.studies[indexOfSelectedStudy - 1] })
     } else if (direction === 'left' && indexOfSelectedStudy === 0) {
-      this.setState({ selectedStudy: this.studies[this.studies.length - 1] });
+      this.setState({ selectedStudy: this.studies[this.studies.length - 1] })
     } else if (
       direction === 'right' &&
       indexOfSelectedStudy < this.studies.length - 1
     ) {
-      this.setState({ selectedStudy: this.studies[indexOfSelectedStudy + 1] });
+      this.setState({ selectedStudy: this.studies[indexOfSelectedStudy + 1] })
     } else if (
       direction === 'right' &&
       indexOfSelectedStudy === this.studies.length - 1
     ) {
-      this.setState({ selectedStudy: this.studies[0] });
+      this.setState({ selectedStudy: this.studies[0] })
     }
   }
 
   componentDidMount() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0)
   }
-
-   render() {
+  render() {
     return (
       <div className='study'>
         <div className='study--title'>
@@ -100,6 +95,6 @@ export default class Project extends Component {
           direction={this.state.direction}
         />
       </div>
-    );
+    )
   }
 }

@@ -66,7 +66,7 @@ class Menu extends Component {
       return 'WHO I AM'
 
     case 'Study':
-      return 'WHAT I&#39;ve DONE'
+      return 'WHAT I\'ve DONE'
     }
   }
 
