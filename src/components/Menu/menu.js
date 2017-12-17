@@ -1,40 +1,40 @@
-import React, { Component } from "react";
-import "./style.css";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../../reducer/index";
+import React, { Component } from 'react'
+import './style.css'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { actionCreators } from '../../reducer/index'
 
 
 class Menu extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       menu: false
-    };
+    }
   }
 
   menuList = [
-    { linkName: "Home" },
-    { linkName: "About" },
-    { linkName: "Study" }
+    { linkName: 'Home' },
+    { linkName: 'About' },
+    { linkName: 'Study' }
   ];
 
   menuBtn = () => {
     if (this.state.menu) {
-      this.inactivateMenu();
+      this.inactivateMenu()
     } else {
-      this.activateMenu();
+      this.activateMenu()
     }
   };
 
   activateMenu() {
-    document.body.classList.add("global-menu--on");
-    this.setState({ menu: true });
+    document.body.classList.add('global-menu--on')
+    this.setState({ menu: true })
   }
 
   inactivateMenu() {
-    document.body.classList.remove("global-menu--on");
-    this.setState({ menu: false });
+    document.body.classList.remove('global-menu--on')
+    this.setState({ menu: false })
   }
 
   linkList() {
@@ -43,30 +43,30 @@ class Menu extends Component {
         <li
           key={index}
           onClick={() => {
-            this.props.selectMenu(link.linkName);
-            this.inactivateMenu();
+            this.props.selectMenu(link.linkName)
+            this.inactivateMenu()
           }}
           className="global-menu__link"
         >
           <span> {link.linkName}</span>
         </li>
-      );
-    });
+      )
+    })
   }
 
   renderMenuText(menu) {
     switch (menu) {
-      default:
-        return "";
+    default:
+      return ''
 
-      case "Home":
-        return "CONNECTING DOTS";
+    case 'Home':
+      return 'CONNECTING DOTS'
 
-      case "About":
-        return "WHO I AM";
+    case 'About':
+      return 'WHO I AM'
 
-      case "Study":
-        return "WHAT I've DONE";
+    case 'Study':
+      return 'WHAT I&#39;ve DONE'
     }
   }
 
@@ -82,46 +82,46 @@ class Menu extends Component {
         </nav>
         <div
           className="global-menu__side global-menu__side--left"
-          onClick={() => {
-            this.props.selectMenu(this.props.menuState.leftMenu);
-            this.props.navigateDirection('left');
+          onClick={ () => {
+            this.props.selectMenu(this.props.menuState.leftMenu)
+            this.props.navigateDirection('left')
           }}
         >
           <p>
             {this.renderMenuText(this.props.menuState.leftMenu)}
-            </p>
-            <span>
+          </p>
+          <span>
             {this.props.menuState.leftMenu}
           </span>
         </div>
         <div
           className="global-menu__side global-menu__side--right"
-          onClick={() => {
-            this.props.selectMenu(this.props.menuState.rightMenu);
-            this.props.navigateDirection('right');
+          onClick={ () => {
+            this.props.selectMenu(this.props.menuState.rightMenu)
+            this.props.navigateDirection('right')
           }}
         >
           <span>
             {this.props.menuState.rightMenu}
-            </span>
-            <p>
+          </span>
+          <p>
             {this.renderMenuText(this.props.menuState.rightMenu)}
           </p>
         </div>
       </div>
-    );
+    )
   }
 }
 
 function mapStateToProps(state) {
-  return { menuState: state.menuState };
+  return { menuState: state.menuState }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     selectMenu: bindActionCreators(actionCreators.selectMenu, dispatch),
     navigateDirection: bindActionCreators(actionCreators.navigateDirection, dispatch)
-  };
+  }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default connect(mapStateToProps, mapDispatchToProps)(Menu)

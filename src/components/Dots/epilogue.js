@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Epilogue = () => {
   return (
@@ -16,8 +16,8 @@ const Epilogue = () => {
           <a href="https://www.facebook.com/zzolain">Facebook</a>
         </p>
       </div>
-     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default Epilogue;
+export default Epilogue

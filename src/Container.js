@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import "./Container.css";
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import './Container.css'
 
-import Menu from "./components/Menu/menu";
-import Home from "./components/Home";
-import About from "./components/About";
-import Study from "./components/Study";
+import Menu from './components/Menu/menu'
+import Home from './components/Home'
+import About from './components/About'
+import Study from './components/Study'
 
 class Container extends Component {
-  constructor(props){
-    super(props);
+  constructor(props) {
+    super(props)
 
     this.state = {
       menuSelected: this.props.menuSelected,
@@ -18,36 +18,43 @@ class Container extends Component {
     }
   }
   components = {
-    Home : Home,
-    About : About,
-    Study : Study
+    Home: Home,
+    About: About,
+    Study: Study
   };
 
-  componentWillReceiveProps(nextProps){
-    const { menuSelected, navigateDirection } = nextProps;
-  
+  componentWillReceiveProps(nextProps) {
+    const { menuSelected, navigateDirection } = nextProps
     if (this.props.menuSelected !== menuSelected) {
       this.setState({
         navigateDirection: navigateDirection,
-        animate: true,
+        animate: true
       })
 
-      setTimeout( () => {
+      setTimeout(() => {
         this.setState({
           menuSelected: menuSelected,
           animate: false
-      })
-    }, 1000)
-    return
+        })
+      }, 1000)
+      return
+    }
   }
-}
 
   render() {
-    const RenderComponent = this.components[this.state.menuSelected];
-    const { animate, navigateDirection } = this.state;
-    const animation = animate
-    ? navigateDirection === "right" ? "bounceOutLeft" : "bounceOutRight"
-    : navigateDirection === "right" ? "bounceInRight" : "bounceInLeft";
+    const RenderComponent = this.components[this.state.menuSelected]
+    const { animate, navigateDirection } = this.state
+    let animation = ''
+
+    if (animate && navigateDirection === 'right') {
+      animation = 'bounceOutLeft'
+    } else if (animate && navigateDirection !== 'right') {
+      animation = 'bountOutRight'
+    } else if (!animate && navigateDirection === 'right') {
+      animation = 'bounceInright'
+    } else if (!animate && navigateDirection !== 'right') {
+      animation = 'bounceInLeft'
+    }
 
     return (
       <div className="container">
@@ -61,15 +68,15 @@ class Container extends Component {
         </article>
         <footer className="global-footer" />
       </div>
-    );
+    )
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
-    menuSelected : state.menuState.menuSelected,
-    navigateDirection : state.navigateDirection
+    menuSelected: state.menuState.menuSelected,
+    navigateDirection: state.navigateDirection
   }
 }
 
-export default connect(mapStateToProps, null)(Container);
+export default connect(mapStateToProps, null)(Container)

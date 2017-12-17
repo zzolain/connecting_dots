@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-const SceneListItem = ({scene}) => {
+const SceneListItem = ({ scene }) => {
   return (
     <div className="scene">
       <div className="arrow" />
@@ -12,19 +12,18 @@ const SceneListItem = ({scene}) => {
             <p>{scene.title}</p>
           </div>
         </div>
-      <div className="dots">
-        {scene.dots.map((dot, index) => {
-          return (
-            <span className="dot__text" key={index}>
-              {dot}
-            </span>
-          );
-        })}
+        <div className="dots">
+          {scene.dots.map((dot, index) => {
+            return (
+              <span className="dot__text" key={index}>
+                {dot}
+              </span>
+            )
+          })}
+        </div>
       </div>
     </div>
-  </div>
   )
 }
 
-
-export default SceneListItem;
+export default SceneListItem

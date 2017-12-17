@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import "./style.css";
+import React, { Component } from 'react'
+import './style.css'
 
 export default class Home extends Component {
   componentDidMount() {
-    const elemHome = document.querySelector(".home");
+    const elemHome = document.querySelector('.home')
     setTimeout(() => {
-      elemHome.classList.add("home--active");
-    }, 1000);
+      elemHome.classList.add('home--active')
+    }, 1000)
   }
 
   render() {
@@ -49,6 +49,6 @@ export default class Home extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
