@@ -51,6 +51,18 @@ export default class Project extends Component {
     }
   }
 
+  // selectStudy와 selectAnotherStudy 중복되는 코드가 많음 => 하나로 합쳐보자(direction 인자가 없으면 index 크기 비교로, 인자가 있을 경우 direction에 맞춰 selectAnotherStudy가 동작하게 만들면 어떨까)
+  selectStudy(selectedStudy) {
+    let indexOfCurrentStudy = this.studies.indexOf(this.state.selectedStudy)
+    let indexOfSelectedStudy = this.studies.indexOf(selectedStudy)
+
+    if (indexOfCurrentStudy < indexOfSelectedStudy) {
+      this.setState({ selectedStudy: selectedStudy, direction: 'right' })
+    } else if (indexOfCurrentStudy > indexOfSelectedStudy) {
+      this.setState({ selectedStudy: selectedStudy, direction: 'left' })
+    }
+  }
+
   selectAnotherStudy(direction) {
     this.setState({ direction: direction })
     let indexOfSelectedStudy = this.studies.indexOf(this.state.selectedStudy)
@@ -85,7 +97,7 @@ export default class Project extends Component {
         <div className='study__list'>
           <StudyList
             studies={this.studies}
-            selectStudy={selectedStudy => this.setState({ selectedStudy })}
+            selectStudy={selectedStudy => this.selectStudy(selectedStudy)}
             selectedStudy={this.state.selectedStudy}
           />
         </div>

@@ -39,7 +39,7 @@ export default class StudyDetail extends Component {
     } else if (animate && direction === 'right') {
       animation = 'studyOutRight'
     } else if (!animate && direction === 'left') {
-      animation = 'studyInright'
+      animation = 'studyInRight'
     } else if (!animate && direction === 'right') {
       animation = 'studyInLeft'
     }
