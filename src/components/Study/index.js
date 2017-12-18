@@ -37,7 +37,7 @@ export default class Project extends Component {
     },
     {
       title: '5 days Weather',
-      img: 'https://preview.ibb.co/cVDHhw/5days_weather.png',
+      img: 'https://i.imgur.com/YwqQfq9.png',
       description: '향후 5일의 날씨 정보(온도, 기압, 습도)를 그래프로 표시하는 앱. fetchReact와 Redux를 공부하기 위한 예제이며 Udemy를 통해 학습 했습니다. 날씨 API를 Redux로 fetch할 때 Promise를 관리하는 middle ware에 대한 개념을 접할 수 있었습니다.',
       url: 'https://study-react-5days-weather.herokuapp.com/'
     }
