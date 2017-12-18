@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Epilogue = () => {
+export default function Epilogue() {
   return (
     <div className="epilogue">
       <div className="about">
@@ -19,5 +19,3 @@ const Epilogue = () => {
     </div>
   )
 }
-
-export default Epilogue

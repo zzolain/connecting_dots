@@ -1,8 +1,16 @@
 //  Actions
+const TOGGLE_WINDOW_MENU = 'TOGGLE_WINDOW_MENU'
 const SELECT_MENU = 'SELECT_MENU'
 const NAVIGATE_DIRECTION = 'NEVIGATE_DIRECTION'
 
 // Action Creators
+function toggleWindowMenu(toggle) {
+  return {
+    type: TOGGLE_WINDOW_MENU,
+    payload: toggle
+  }
+}
+
 function selectMenu(menuSelected) {
   return {
     type: SELECT_MENU,
@@ -18,6 +26,25 @@ function navigateDirection(direction) {
 }
 
 // Reducer Functions
+function applyToogleWindowMenu(state, payload) {
+  switch (payload) {
+  case 'on':
+    return {
+      ...state,
+      windowMenuState: true
+    }
+
+  case 'off':
+    return {
+      ...state,
+      windowMenuState: false
+    }
+
+  default:
+    return state
+  }
+}
+
 function applyMenuSelected(state, payload) {
   switch (payload) {
   case 'Home':
@@ -63,6 +90,7 @@ function applyNavigateDirection(state, payload) {
 }
 
 // Reducer
+
 const menuState = {
   menuSelected: 'Home',
   leftMenu: 'About',
@@ -70,12 +98,16 @@ const menuState = {
 }
 
 const initialState = {
+  windowMenuState: false,
   menuState: menuState,
-  navigateDirection: 'initial'
+  navigateDirection: 'null'
 }
 
 function reducer(state = initialState, action) {
   switch (action.type) {
+  case TOGGLE_WINDOW_MENU:
+    return applyToogleWindowMenu(state, action.payload)
+
   case SELECT_MENU:
     return applyMenuSelected(state, action.payload)
 
@@ -90,6 +122,7 @@ function reducer(state = initialState, action) {
 // Export Action Creators
 
 const actionCreators = {
+  toggleWindowMenu,
   selectMenu,
   navigateDirection
 }

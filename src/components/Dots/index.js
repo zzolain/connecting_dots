@@ -4,6 +4,7 @@ import SceneList from './scene_list'
 import Epilogue from './epilogue'
 
 export default class About extends Component {
+  // This should be stored in DB
   scenes = [
     {
       title: '"Tada! Hello the World!"',

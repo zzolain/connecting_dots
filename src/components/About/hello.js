@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './style.css'
 import Dots from '../Dots'
+import Introduction from './introduction'
 
 
 export default class Hello extends Component {
@@ -33,30 +34,12 @@ export default class Hello extends Component {
     window.removeEventListener('scroll', this.scrollYAnimation)
   }
 
-  renderIntroduction(index) {
-    return (
-      <div className="hello__wrapper">
-        <div className="hello__text__title">
-          <span>{this.props.introductionList[index].title}</span>
-        </div>
-        <div className="hello__text__wrapper">
-          <div className="hello__text--korean">
-            <p>{this.props.introductionList[index].korean}</p>
-          </div>
-          <div className="hello__text--english">
-            <p>{this.props.introductionList[index].english}</p>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
   render() {
     return (
       <div className="hello">
         <div className="greeting">JINSOL KIM</div>
-        {this.renderIntroduction(0)}
-        {this.renderIntroduction(1)}
+        <Introduction introductionList={this.props.introductionList} index={0} />
+        <Introduction introductionList={this.props.introductionList} index={1} />
         <div className="hello__wrapper">
           <div className="hello__quote">
             <p>"YOU CAN'T CONNECT THE DOTS<br />LOOKING FORWARD;</p>
@@ -66,8 +49,8 @@ export default class Hello extends Component {
             <p> Steve Jobs</p>
           </div>
         </div>
-        {this.renderIntroduction(2)}
-        {this.renderIntroduction(3)}
+        <Introduction introductionList={this.props.introductionList} index={2} />
+        <Introduction introductionList={this.props.introductionList} index={3} />
         <Dots />
       </div>
     )

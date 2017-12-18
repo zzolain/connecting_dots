@@ -6,13 +6,6 @@ import { actionCreators } from '../../reducer/index'
 
 
 class Menu extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      menu: false
-    }
-  }
-
   menuList = [
     { linkName: 'Home' },
     { linkName: 'About' },
@@ -20,7 +13,7 @@ class Menu extends Component {
   ];
 
   menuBtn = () => {
-    if (this.state.menu) {
+    if (this.props.windowMenuState) {
       this.inactivateMenu()
     } else {
       this.activateMenu()
@@ -28,13 +21,13 @@ class Menu extends Component {
   };
 
   activateMenu() {
+    this.props.toggleWindowMenu('on')
     document.body.classList.add('global-menu--on')
-    this.setState({ menu: true })
   }
 
   inactivateMenu() {
+    this.props.toggleWindowMenu('off')
     document.body.classList.remove('global-menu--on')
-    this.setState({ menu: false })
   }
 
   linkList() {
@@ -114,11 +107,14 @@ class Menu extends Component {
 }
 
 function mapStateToProps(state) {
-  return { menuState: state.menuState }
+  return {
+    windowMenuState: state.windowMenuState,
+    menuState: state.menuState }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
+    toggleWindowMenu: bindActionCreators(actionCreators.toggleWindowMenu, dispatch),
     selectMenu: bindActionCreators(actionCreators.selectMenu, dispatch),
     navigateDirection: bindActionCreators(actionCreators.navigateDirection, dispatch)
   }
