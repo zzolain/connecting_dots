@@ -7,28 +7,28 @@ import { actionCreators } from '../../reducer/index'
 class MenuLink extends Component {
     menuList = {
       home: { title: 'Home', url: '/', description: 'CONNECTING DOTS' },
-      about: { title: 'About', url: '/about', description: 'WHO I AM'},
+      about: { title: 'About', url: '/about', description: 'WHO I AM' },
       study: { title: 'Study', url: '/study', description: 'WHAT I\'ve DONE' }
     }
 
     render() {
       return (
-        <li 
+        <li
           key={this.menuList[this.props.linkName].title}
           onClick={()=>{
             this.props.selectMenu(this.menuList[this.props.linkName].title)
-            this.props.menuBtn? this.props.menuBtn() :''
+            this.props.menuBtn ? this.props.menuBtn() : ''
           }}
-          className="global-menu__link"
+          className="menu__link"
         >
           <Link to={this.menuList[this.props.linkName].url}>
-            <span>{this.menuList[this.props.linkName].title}</span>
-            <span>{this.menuList[this.props.linkName].description}</span>
+            <p>{this.menuList[this.props.linkName].title}</p>
+            <p>{this.menuList[this.props.linkName].description}</p>
           </Link>
         </li>
       )
-    }   
     }
+}
 
 function mapStateToProps(state) {
   return {

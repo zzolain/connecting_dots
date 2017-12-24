@@ -85,46 +85,7 @@ body {
 
 
 
-.global-menu__btn {
-  position: fixed;
-  left: calc(2vw + 20px);
-  top: calc(2vh + 8px);
-  padding: 0;
-  width: 44px;
-  height: 44px;
-  border: 0;
-  background: none transparent;
-  z-index: 1000;
-}
 
-.global-menu__btn:hover{
-  cursor: pointer;
-
-}
-
-.global-menu__btn .global-menu__label {
-  position: absolute;
-  left: -1000rem;
-}
-
-.global-menu__btn:after {
-  content: "";
-  display: block;
-  width:25px;
-  height: 25px;
-  border-radius:50%;
-  border: solid gray 1.5px;
-  z-index: 1000;
-  transition: all .5s;
-}
-
-.global-menu__btn:hover:after {
-  border-color: tomato;
-}
-
-.global-menu--on .global-menu__btn:after {
-  transform: rotateY(-180deg);
-}
 
 .global-footer {
   position: fixed;

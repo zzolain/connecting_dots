@@ -10,46 +10,38 @@ class Menu extends Component {
     this.props.toggleWindowMenu(!this.props.windowMenuState)
   }
   render() {
+    const leftMenu = this.props.menuState.leftMenu
+    const rightMenu = this.props.menuState.rightMenu
     return (
-      <div className={`menu ${this.props.windowMenuState? 'global-menu--on' : ''}`}>
-        <button className="global-menu__btn" onClick={ () => this.menuBtn()}>
-          <span className="global-menu__label">Menu</span>
+      <div className={`menu${this.props.windowMenuState? ' menu__window--on' :''}`}>
+        <button className="menu__btn" onClick={ () => this.menuBtn()}>
+          <span className="menu__label">Menu</span>
         </button>
 
-        <nav className="global-menu">
-          <ul className="global-menu__background">
-            <MenuLink linkName={'home'} />
-            <MenuLink linkName={'about'} />
-            <MenuLink linkName={'study'} />
+        <nav className="menu__window">
+          <ul>
+            <MenuLink linkName={'home'} menuBtn={()=>this.menuBtn()} />
+            <MenuLink linkName={'about'} menuBtn={()=>this.menuBtn()} />
+            <MenuLink linkName={'study'} menuBtn={()=>this.menuBtn()} />
           </ul>
         </nav>
         <div
-          className="global-menu__side global-menu__side--left"
+          className="menu__side menu__side--left"
           onClick={ () => {
             this.props.selectMenu(this.props.menuState.leftMenu)
             this.props.navigateDirection('left')
           }}
         >
-          <p>
-            {this.renderMenuText(this.props.menuState.leftMenu)}
-          </p>
-          <span>
-            {this.props.menuState.leftMenu}
-          </span>
+          <MenuLink linkName={leftMenu} />
         </div>
         <div
-          className="global-menu__side global-menu__side--right"
+          className="menu__side menu__side--right"
           onClick={ () => {
             this.props.selectMenu(this.props.menuState.rightMenu)
             this.props.navigateDirection('right')
           }}
         >
-          <span>
-            {this.props.menuState.rightMenu}
-          </span>
-          <p>
-            {this.renderMenuText(this.props.menuState.rightMenu)}
-          </p>
+          <MenuLink linkName={rightMenu} />
         </div>
       </div>
     )

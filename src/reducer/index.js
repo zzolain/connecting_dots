@@ -47,33 +47,33 @@ function applyToogleWindowMenu(state, payload) {
 
 function applyMenuSelected(state, payload) {
   switch (payload) {
-  case 'Home':
+  case 'home':
     return {
       ...state,
       menuState: {
-        menuSelected: 'Home',
-        leftMenu: 'About',
-        rightMenu: 'Study'
+        menuSelected: 'home',
+        leftMenu: 'about',
+        rightMenu: 'study'
       }
     }
 
-  case 'About':
+  case 'about':
     return {
       ...state,
       menuState: {
-        menuSelected: 'About',
-        leftMenu: 'Study',
-        rightMenu: 'Home'
+        menuSelected: 'about',
+        leftMenu: 'study',
+        rightMenu: 'home'
       }
     }
 
-  case 'Study':
+  case 'study':
     return {
       ...state,
       menuState: {
-        menuSelected: 'Study',
-        leftMenu: 'Home',
-        rightMenu: 'About'
+        menuSelected: 'study',
+        leftMenu: 'home',
+        rightMenu: 'about'
       }
     }
 
@@ -92,9 +92,9 @@ function applyNavigateDirection(state, payload) {
 // Reducer
 
 const menuState = {
-  menuSelected: 'Home',
-  leftMenu: 'About',
-  rightMenu: 'Study'
+  menuSelected: 'home',
+  leftMenu: 'about',
+  rightMenu: 'study'
 }
 
 const initialState = {
