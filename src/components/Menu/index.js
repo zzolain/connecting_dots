@@ -3,24 +3,17 @@ import './style.css'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../reducer/index'
-
+import { Link } from 'react-router-dom'
 
 class Menu extends Component {
   menuList = [
-    { linkName: 'Home' },
-    { linkName: 'About' },
-    { linkName: 'Study' }
+    { linkName: 'Home', url: '/' },
+    { linkName: 'About', url: '/about'},
+    { linkName: 'Study', url: '/study' }
   ];
 
   menuBtn() {
-    const switchValue = !this.props.windowMenuState
-    this.props.toggleWindowMenu(switchValue)
-
-    if (this.props.windowMenuState) {
-      document.body.classList.add('global-menu--on')
-    } else {
-      document.body.classList.remove('global-menu--on')
-    }
+    this.props.toggleWindowMenu(!this.props.windowMenuState)
   }
 
   linkList() {
@@ -30,11 +23,11 @@ class Menu extends Component {
           key={index}
           onClick={() => {
             this.props.selectMenu(link.linkName)
-            this.inactivateMenu()
+            this.menuBtn()
           }}
           className="global-menu__link"
         >
-          <span> {link.linkName}</span>
+          <Link to={link.url}><span>{link.linkName}</span></Link>
         </li>
       )
     })
@@ -58,7 +51,7 @@ class Menu extends Component {
 
   render() {
     return (
-      <div className="menu">
+      <div className={`menu ${this.props.windowMenuState? 'global-menu--on' : ''}`}>
         <button className="global-menu__btn" onClick={ () => this.menuBtn()}>
           <span className="global-menu__label">Menu</span>
         </button>

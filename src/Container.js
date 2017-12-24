@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
 import './Container.css'
 
 import Menu from './components/Menu'
@@ -17,11 +21,6 @@ class Container extends Component {
       navigateDirection: this.props.navigateDirection
     }
   }
-  components = {
-    Home: Home,
-    About: About,
-    Study: Study
-  };
 
   componentWillReceiveProps(nextProps) {
     const { menuSelected, navigateDirection } = nextProps
@@ -42,7 +41,6 @@ class Container extends Component {
   }
 
   render() {
-    const RenderComponent = this.components[this.state.menuSelected]
     const { startAnimation, navigateDirection } = this.state
     let animation = ''
     if (startAnimation && navigateDirection === 'right') {
@@ -57,15 +55,21 @@ class Container extends Component {
 
     return (
       <div className="container">
+      <Router>
+        <div>
         <header className="global-header">
           <Menu />
         </header>
         <article className={`content ${animation}`}>
-          <RenderComponent />
-
-
+            <div>
+            <Route exact path='/' component={Home} />
+            <Route path='/about' component={About} />
+            <Route path='/study' component={Study} />
+            </div>
         </article>
         <footer className="global-footer" />
+        </div>
+        </Router>
       </div>
     )
   }

@@ -98,7 +98,7 @@ const menuState = {
 }
 
 const initialState = {
-  windowMenuState: true,
+  windowMenuState: false,
   menuState: menuState,
   navigateDirection: 'null'
 }
