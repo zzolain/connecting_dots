@@ -22,23 +22,23 @@ class Container extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { menuSelected, navigateDirection } = nextProps
-    if (this.props.menuSelected !== menuSelected) {
-      this.setState({
-        navigateDirection: navigateDirection,
-        startAnimation: true
-      })
+  // componentWillReceiveProps(nextProps) {
+  //   const { menuSelected, navigateDirection } = nextProps
+  //   if (this.props.menuSelected !== menuSelected) {
+  //     this.setState({
+  //       navigateDirection: navigateDirection,
+  //       startAnimation: true
+  //     })
 
-      setTimeout(() => {
-        this.setState({
-          menuSelected: menuSelected,
-          startAnimation: false
-        })
-      }, 1000)
-      return
-    }
-  }
+  //     setTimeout(() => {
+  //       this.setState({
+  //         menuSelected: menuSelected,
+  //         startAnimation: false
+  //       })
+  //     }, 500)
+  //     return
+  //   }
+  // }
 
   render() {
     const { startAnimation, navigateDirection } = this.state

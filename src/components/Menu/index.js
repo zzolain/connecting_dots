@@ -3,52 +3,12 @@ import './style.css'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../reducer/index'
-import { Link } from 'react-router-dom'
+import MenuLink from './menu_link'
 
 class Menu extends Component {
-  menuList = [
-    { linkName: 'Home', url: '/' },
-    { linkName: 'About', url: '/about'},
-    { linkName: 'Study', url: '/study' }
-  ];
-
   menuBtn() {
     this.props.toggleWindowMenu(!this.props.windowMenuState)
   }
-
-  linkList() {
-    return this.menuList.map((link, index) => {
-      return (
-        <li
-          key={index}
-          onClick={() => {
-            this.props.selectMenu(link.linkName)
-            this.menuBtn()
-          }}
-          className="global-menu__link"
-        >
-          <Link to={link.url}><span>{link.linkName}</span></Link>
-        </li>
-      )
-    })
-  }
-
-  renderMenuText(menu) {
-    switch (menu) {
-    default:
-      return ''
-
-    case 'Home':
-      return 'CONNECTING DOTS'
-
-    case 'About':
-      return 'WHO I AM'
-
-    case 'Study':
-      return 'WHAT I\'ve DONE'
-    }
-  }
-
   render() {
     return (
       <div className={`menu ${this.props.windowMenuState? 'global-menu--on' : ''}`}>
@@ -57,7 +17,11 @@ class Menu extends Component {
         </button>
 
         <nav className="global-menu">
-          <ul className="global-menu__background">{this.linkList()}</ul>
+          <ul className="global-menu__background">
+            <MenuLink linkName={'home'} />
+            <MenuLink linkName={'about'} />
+            <MenuLink linkName={'study'} />
+          </ul>
         </nav>
         <div
           className="global-menu__side global-menu__side--left"
