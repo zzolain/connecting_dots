@@ -4,10 +4,10 @@ const SELECT_MENU = 'SELECT_MENU'
 const NAVIGATE_DIRECTION = 'NEVIGATE_DIRECTION'
 
 // Action Creators
-function toggleWindowMenu(toggle) {
+function toggleWindowMenu(switchValue) {
   return {
     type: TOGGLE_WINDOW_MENU,
-    payload: toggle
+    payload: switchValue
   }
 }
 
@@ -28,13 +28,13 @@ function navigateDirection(direction) {
 // Reducer Functions
 function applyToogleWindowMenu(state, payload) {
   switch (payload) {
-  case 'on':
+  case true:
     return {
       ...state,
       windowMenuState: true
     }
 
-  case 'off':
+  case false:
     return {
       ...state,
       windowMenuState: false
@@ -98,7 +98,7 @@ const menuState = {
 }
 
 const initialState = {
-  windowMenuState: false,
+  windowMenuState: true,
   menuState: menuState,
   navigateDirection: 'null'
 }

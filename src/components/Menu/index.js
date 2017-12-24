@@ -12,22 +12,15 @@ class Menu extends Component {
     { linkName: 'Study' }
   ];
 
-  menuBtn = () => {
+  menuBtn() {
+    const switchValue = !this.props.windowMenuState
+    this.props.toggleWindowMenu(switchValue)
+
     if (this.props.windowMenuState) {
-      this.inactivateMenu()
+      document.body.classList.add('global-menu--on')
     } else {
-      this.activateMenu()
+      document.body.classList.remove('global-menu--on')
     }
-  };
-
-  activateMenu() {
-    this.props.toggleWindowMenu('on')
-    document.body.classList.add('global-menu--on')
-  }
-
-  inactivateMenu() {
-    this.props.toggleWindowMenu('off')
-    document.body.classList.remove('global-menu--on')
   }
 
   linkList() {
@@ -66,7 +59,7 @@ class Menu extends Component {
   render() {
     return (
       <div className="menu">
-        <button className="global-menu__btn" onClick={this.menuBtn}>
+        <button className="global-menu__btn" onClick={ () => this.menuBtn()}>
           <span className="global-menu__label">Menu</span>
         </button>
 
