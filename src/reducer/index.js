@@ -53,7 +53,7 @@ function applyMenuSelected(state, payload) {
       menuState: {
         menuSelected: 'home',
         leftMenu: 'about',
-        rightMenu: 'study'
+        rightMenu: 'project'
       }
     }
 
@@ -62,16 +62,16 @@ function applyMenuSelected(state, payload) {
       ...state,
       menuState: {
         menuSelected: 'about',
-        leftMenu: 'study',
+        leftMenu: 'project',
         rightMenu: 'home'
       }
     }
 
-  case 'study':
+  case 'project':
     return {
       ...state,
       menuState: {
-        menuSelected: 'study',
+        menuSelected: 'project',
         leftMenu: 'home',
         rightMenu: 'about'
       }
@@ -94,7 +94,7 @@ function applyNavigateDirection(state, payload) {
 const menuState = {
   menuSelected: 'home',
   leftMenu: 'about',
-  rightMenu: 'study'
+  rightMenu: 'project'
 }
 
 const initialState = {

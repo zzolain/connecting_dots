@@ -8,7 +8,7 @@ class MenuLink extends Component {
     menuList = {
       home: { title: 'Home', url: '/', description: 'CONNECTING DOTS' },
       about: { title: 'About', url: '/about', description: 'WHO I AM' },
-      study: { title: 'Study', url: '/study', description: 'WHAT I\'ve DONE' }
+      project: { title: 'Project', url: '/project', description: 'WHAT I\'ve DONE' }
     }
 
     render() {
@@ -17,7 +17,7 @@ class MenuLink extends Component {
           key={this.menuList[this.props.linkName].title}
           onClick={()=>{
             this.props.selectMenu(this.menuList[this.props.linkName].title)
-            this.props.menuBtn ? this.props.menuBtn() : ''
+            this.props.menuBtn && this.props.menuBtn()
           }}
           className="menu__link"
         >

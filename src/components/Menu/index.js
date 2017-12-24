@@ -22,7 +22,7 @@ class Menu extends Component {
           <ul>
             <MenuLink linkName={'home'} menuBtn={()=>this.menuBtn()} />
             <MenuLink linkName={'about'} menuBtn={()=>this.menuBtn()} />
-            <MenuLink linkName={'study'} menuBtn={()=>this.menuBtn()} />
+            <MenuLink linkName={'project'} menuBtn={()=>this.menuBtn()} />
           </ul>
         </nav>
         <div

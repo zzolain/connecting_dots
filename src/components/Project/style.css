@@ -1,54 +1,52 @@
-.study {
+.project {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.study--title {
+.project--title {
     margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-bottom: 1vh;
     font-size: calc(2rem + 5vw);
     color: white;
 }
 
-.study__list ul{
+.project__list ul{
     color: rgb(92, 92, 92);
     font-size: .7rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    max-width: 850px;
-    border-left: 1px solid salmon;
-    border-right: 1px solid salmon;
+    max-width: 650px;
     margin-left: 2vw;
     margin-right: 2vw;
 }
 
-.study__list li {
+.project__list li {
     margin: .5rem 1rem;
     cursor: pointer;
     transition: all .8s ease-in-out;
     list-style: none;
 }
 
-.study__list li:hover {
+.project__list li:hover {
     color: tomato;
 }
 
-.study__container {
+.project__container {
     width: 100vw;
     display: flex;
     justify-content: center;
     margin-bottom: 20vh;
 }
-.study__wrapper {
+.project__wrapper {
     max-width: 900px;
     
     position: relative;
     
 }
 
-.study__content-wrapper {
+.project__content-wrapper {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -57,11 +55,11 @@
 
 
 
-.study__content-wrapper .study__thumnail--wrapper {
+.project__content-wrapper .project__thumnail--wrapper {
     padding: 0 2vw;
 }
 
-.study__thumnail--wrapper .study__thumnail--image {
+.project__thumnail--wrapper .project__thumnail--image {
     max-width: 265px;
     max-height: 500px;
     width: calc(190px + 10vw);
@@ -72,7 +70,7 @@
     border-radius: 10px;
 }
 
-.study__arrow--left {
+.project__arrow--left {
   text-align: left;
   position: absolute;
   left: 0;
@@ -86,7 +84,7 @@
 
 }
 
-.study__arrow--right {
+.project__arrow--right {
   text-align: right;
   position: absolute;
   right: 0;
@@ -99,19 +97,19 @@
   transition: all 1.5s ease-in-out;
 }
 
-.study__arrow--left:hover,
-.study__arrow--right:hover {
+.project__arrow--left:hover,
+.project__arrow--right:hover {
   color: tomato;
 }
 
-.study__thumnail--wrapper .study__thumnail--title {
+.project__thumnail--wrapper .project__thumnail--title {
     margin-bottom: 1rem;
     text-align: center;
     color: white;
     font-size: .8rem;
 }
 
-.study__thumnail__text {
+.project__thumnail__text {
     padding: 2.5rem 2vw;
     color: white;
     font-size: .7rem;
@@ -121,43 +119,43 @@
     max-width: 350px;
 }
 
-.study__thumnail__text a {
+.project__thumnail__text a {
     color: #858585;
 }
 
-.study__thumnail__text a:hover {
+.project__thumnail__text a:hover {
     color: tomato;
 }
 
 
 @media screen and (max-width: 700px){
-    .study__wrapper .study__arrow--right {
+    .project__wrapper .project__arrow--right {
         right: 8%;
 
     }
-    .study__wrapper .study__arrow--left {
+    .project__wrapper .project__arrow--left {
         left: 8%;
     }
 }
 
 
-.studyInLeft .study__content-wrapper {
-   animation: studyInLeft 2.5s
+.projectInLeft .project__content-wrapper {
+   animation: projectInLeft 2.5s
 }
-.studyOutLeft .study__content-wrapper{
-  animation: studyOutLeft 1.5s
+.projectOutLeft .project__content-wrapper{
+  animation: projectOutLeft 1.5s
 }
-.studyInRight .study__content-wrapper{
-  animation: studyInRight 2.5s
+.projectInRight .project__content-wrapper{
+  animation: projectInRight 2.5s
 }
-.studyOutRight .study__content-wrapper{
-  animation: studyOutRight 1.5s
+.projectOutRight .project__content-wrapper{
+  animation: projectOutRight 1.5s
 }
 
 
 
   
-  @keyframes studyInLeft {
+  @keyframes projectInLeft {
     0% {
       opacity: 0;
       -webkit-transform: translate3d(-10%, 0, 0);
@@ -178,7 +176,7 @@
   }
   
 
-  @-webkit-keyframes studyOutLeft {
+  @-webkit-keyframes projectOutLeft {
     20% {
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);
@@ -191,7 +189,7 @@
     }
   }
   
-  @keyframes studyOutLeft {
+  @keyframes projectOutLeft {
     20% {
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);
@@ -208,7 +206,7 @@
   
  
   
-  @-webkit-keyframes studyInRight {
+  @-webkit-keyframes projectInRight {
 
     0% {
       opacity: 0;
@@ -226,7 +224,7 @@
     }
   }
   
-  @keyframes studyInRight {
+  @keyframes projectInRight {
 
     0% {
       opacity: 0;
@@ -249,7 +247,7 @@
   
 
   
-  @-webkit-keyframes studyOutRight {
+  @-webkit-keyframes projectOutRight {
     20% {
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);
@@ -262,7 +260,7 @@
     }
   }
   
-  @keyframes studyOutRight {
+  @keyframes projectOutRight {
     20% {
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);

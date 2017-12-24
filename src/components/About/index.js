@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './style.css'
 import Hello from './hello'
 
-export default function About() {
+export default class About extends Component {
 // this should be stored in DB
-  const introductionList = [
+  introductionList = [
     {
       title: '',
       korean: '안녕하세요\n저는 멋진 프론트엔드 개발자를 꿈꾸는 김진솔입니다.\n얼마 전까지 코딩에 "코"자도 모르던 저였지만,\n지금은 개발 덕후가 되어 개발자로서의 삶을 꿈꾸고,\n최신 맥북에 군침을 흘리고 있습니다.',
@@ -26,10 +26,10 @@ export default function About() {
       english: 'Thankfully,\nI have a lot of people who gave me courage\nAnd power to be able to start development.\nI want to express my gratitude to them\nWith this page.\nThank you.'
     }
   ]
-
-  return (
-    <Hello introductionList={introductionList}/>
-  )
+  render() {
+    return (
+      <Hello introductionList={this.introductionList}/>
+    )
+  }
 }
-
 

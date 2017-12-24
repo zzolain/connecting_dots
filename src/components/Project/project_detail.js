@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import './style.css'
 
-export default class StudyDetail extends Component {
+export default class ProjectDetail extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedStudy: this.props.selectedStudy,
+      selectedProject: this.props.selectedProject,
       animate: false,
       direction: ''
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    const { selectedStudy, direction } = nextProps
+    const { selectedProject, direction } = nextProps
 
-    if (this.props.selectedStudy.title !== selectedStudy.title) {
+    if (this.props.selectedProject.title !== selectedProject.title) {
       this.setState({
         direction: direction,
         animate: true
@@ -22,7 +22,7 @@ export default class StudyDetail extends Component {
 
       setTimeout(() => {
         this.setState({
-          selectedStudy: selectedStudy,
+          selectedProject: selectedProject,
           animate: false
         })
       }, 1000)
@@ -31,17 +31,17 @@ export default class StudyDetail extends Component {
   }
 
   render() {
-    const { title, description, url, img } = this.state.selectedStudy
+    const { title, description, url, img } = this.state.selectedProject
     const { animate, direction } = this.state
     let animation
     if (animate && direction === 'left') {
-      animation = 'studyOutLeft'
+      animation = 'projectOutLeft'
     } else if (animate && direction === 'right') {
-      animation = 'studyOutRight'
+      animation = 'projectOutRight'
     } else if (!animate && direction === 'left') {
-      animation = 'studyInRight'
+      animation = 'projectInRight'
     } else if (!animate && direction === 'right') {
-      animation = 'studyInLeft'
+      animation = 'projectInLeft'
     }
 
     const bgImageStyle = {
@@ -49,14 +49,14 @@ export default class StudyDetail extends Component {
     }
 
     return (
-      <div className="study__container">
-        <div className={`study__wrapper ${animation}`}>
-          <div className="study__content-wrapper">
-            <div className="study__thumnail--wrapper">
-              <div className="study__thumnail--title">{title}</div>
-              <div className="study__thumnail--image" style={bgImageStyle} />
+      <div className="project__container">
+        <div className={`project__wrapper ${animation}`}>
+          <div className="project__content-wrapper">
+            <div className="project__thumnail--wrapper">
+              <div className="project__thumnail--title">{title}</div>
+              <div className="project__thumnail--image" style={bgImageStyle} />
             </div>
-            <div className="study__thumnail__text">
+            <div className="project__thumnail__text">
               <span>{description}</span>
               <a href={url} target="_blank">
                 <p>{url}</p>
@@ -64,14 +64,14 @@ export default class StudyDetail extends Component {
             </div>
           </div>
           <div
-            className="study__arrow--left"
-            onClick={ () => this.props.selectAnotherStudy('left')}
+            className="project__arrow--left"
+            onClick={ () => this.props.selectAnotherProject('left')}
           >
             &lt;
           </div>
           <div
-            className="study__arrow--right"
-            onClick={ () => this.props.selectAnotherStudy('right')}
+            className="project__arrow--right"
+            onClick={ () => this.props.selectAnotherProject('right')}
           >
             &gt;
           </div>

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './style.css'
-import StudyList from './study_list'
-import StudyDetail from './study_detail'
+import ProjectList from './project_list'
+import ProjectDetail from './project_detail'
 
 export default class Project extends Component {
-  studies = [
+  projects = [
     {
       title: 'Connecting dots',
       img: 'https://i.imgur.com/jiKyhSd.png',
@@ -46,41 +46,41 @@ export default class Project extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedStudy: this.studies[0],
+      selectedProject: this.projects[0],
       direction: ''
     }
   }
 
-  // selectStudy와 selectAnotherStudy 중복되는 코드가 많음 => 하나로 합쳐보자(direction 인자가 없으면 index 크기 비교로, 인자가 있을 경우 direction에 맞춰 selectAnotherStudy가 동작하게 만들면 어떨까)
-  selectStudy(selectedStudy) {
-    let indexOfCurrentStudy = this.studies.indexOf(this.state.selectedStudy)
-    let indexOfSelectedStudy = this.studies.indexOf(selectedStudy)
+  // selectProject와 selectAnotherProject 중복되는 코드가 많음 => 하나로 합쳐보자(direction 인자가 없으면 index 크기 비교로, 인자가 있을 경우 direction에 맞춰 selectAnotherProject가 동작하게 만들면 어떨까)
+  selectProject(selectedProject) {
+    let indexOfCurrentProject = this.projects.indexOf(this.state.selectedProject)
+    let indexOfSelectedProject = this.projects.indexOf(selectedProject)
 
-    if (indexOfCurrentStudy < indexOfSelectedStudy) {
-      this.setState({ selectedStudy: selectedStudy, direction: 'right' })
-    } else if (indexOfCurrentStudy > indexOfSelectedStudy) {
-      this.setState({ selectedStudy: selectedStudy, direction: 'left' })
+    if (indexOfCurrentProject < indexOfSelectedProject) {
+      this.setState({ selectedProject: selectedProject, direction: 'right' })
+    } else if (indexOfCurrentProject > indexOfSelectedProject) {
+      this.setState({ selectedProject: selectedProject, direction: 'left' })
     }
   }
 
-  selectAnotherStudy(direction) {
+  selectAnotherProject(direction) {
     this.setState({ direction: direction })
-    let indexOfSelectedStudy = this.studies.indexOf(this.state.selectedStudy)
+    let indexOfSelectedProject = this.projects.indexOf(this.state.selectedProject)
 
-    if (direction === 'left' && indexOfSelectedStudy > 0) {
-      this.setState({ selectedStudy: this.studies[indexOfSelectedStudy - 1] })
-    } else if (direction === 'left' && indexOfSelectedStudy === 0) {
-      this.setState({ selectedStudy: this.studies[this.studies.length - 1] })
+    if (direction === 'left' && indexOfSelectedProject > 0) {
+      this.setState({ selectedProject: this.projects[indexOfSelectedProject - 1] })
+    } else if (direction === 'left' && indexOfSelectedProject === 0) {
+      this.setState({ selectedProject: this.projects[this.projects.length - 1] })
     } else if (
       direction === 'right' &&
-      indexOfSelectedStudy < this.studies.length - 1
+      indexOfSelectedProject < this.projects.length - 1
     ) {
-      this.setState({ selectedStudy: this.studies[indexOfSelectedStudy + 1] })
+      this.setState({ selectedProject: this.projects[indexOfSelectedProject + 1] })
     } else if (
       direction === 'right' &&
-      indexOfSelectedStudy === this.studies.length - 1
+      indexOfSelectedProject === this.projects.length - 1
     ) {
-      this.setState({ selectedStudy: this.studies[0] })
+      this.setState({ selectedProject: this.projects[0] })
     }
   }
 
@@ -89,24 +89,25 @@ export default class Project extends Component {
   }
   render() {
     return (
-      <div className='study'>
-        <div className='study--title'>
+      <div className='project'>
+        <div className='project--title'>
           PlayGround:
           <p>what I&#39;ve done</p>
         </div>
-        <div className='study__list'>
-          <StudyList
-            studies={this.studies}
-            selectStudy={selectedStudy => this.selectStudy(selectedStudy)}
-            selectedStudy={this.state.selectedStudy}
+        <div className='project__list'>
+          <ProjectList
+            projects={this.projects}
+            selectProject={selectedProject => this.selectProject(selectedProject)}
+            selectedProject={this.state.selectedProject}
           />
         </div>
-        <StudyDetail
-          selectedStudy={this.state.selectedStudy}
-          selectAnotherStudy={direction => this.selectAnotherStudy(direction)}
+        <ProjectDetail
+          selectedProject={this.state.selectedProject}
+          selectAnotherProject={direction => this.selectAnotherProject(direction)}
           direction={this.state.direction}
         />
       </div>
     )
   }
 }
+
