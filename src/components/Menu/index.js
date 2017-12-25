@@ -13,7 +13,7 @@ class Menu extends Component {
     const leftMenu = this.props.menuState.leftMenu
     const rightMenu = this.props.menuState.rightMenu
     return (
-      <div className={`menu${this.props.windowMenuState? ' menu__window--on' :''}`}>
+      <div className={`menu${this.props.windowMenuState ? ' menu__window--on' : ''}`}>
         <button className="menu__btn" onClick={ () => this.menuBtn()}>
           <span className="menu__label">Menu</span>
         </button>

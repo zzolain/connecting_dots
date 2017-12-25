@@ -11,7 +11,7 @@
   height: 44px;
   border: 0;
   background: none transparent;
-  z-index: 1000;
+  z-index: 1500;
 }
 .menu .menu__btn:after {
   content: "";
@@ -19,15 +19,16 @@
   width:25px;
   height: 25px;
   border-radius:50%;
-  border: solid gray 1.5px;
-  z-index: 1000;
+  border: solid tomato 1.5px;
+  z-index: 1500;
   transition: all .5s;
 }
+
 .menu .menu__btn:hover {
   cursor: pointer;
 }
 .menu__btn:hover:after {
-  border-color: tomato;
+  border-color: white;
 }
 .menu__btn .menu__label {
   position: absolute;
@@ -51,7 +52,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  z-index: 900;
+  z-index: 1100;
   opacity: 0;
   display: flex;
   transform: translate3d(-100%, -10%, 0);

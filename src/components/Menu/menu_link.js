@@ -16,7 +16,7 @@ class MenuLink extends Component {
         <li
           key={this.menuList[this.props.linkName].title}
           onClick={()=>{
-            this.props.selectMenu(this.menuList[this.props.linkName].title)
+            this.props.selectMenu(this.props.linkName)
             this.props.menuBtn && this.props.menuBtn()
           }}
           className="menu__link"

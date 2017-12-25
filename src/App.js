@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import './App.css'
-
 import Menu from './components/Menu'
 import Home from './components/Home'
 import About from './components/About'
 import Project from './components/Project'
+
+import AnimationRoute from './Route/AnimationRoute'
 
 class App extends Component {
   constructor(props) {
@@ -20,21 +21,22 @@ class App extends Component {
     }
   }
 
+
   render() {
     return (
-      <div className="container">
-        <header className="global-header">
-          <Menu />
-        </header>
-        <article className="content">
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/about' component={About} />
-            <Route path='/project' component={Project} />
-          </Switch>
-        </article>
-        <footer className="global-footer" />
-      </div>
+      <Router>
+        <div className="container">
+          <header className="global-header">
+            <Menu />
+          </header>
+          <article className="content">
+            <AnimationRoute exact path='/' component={Home} />
+            <AnimationRoute exact path='/about' component={About} />
+            <AnimationRoute exact path='/project' component={Project} />
+          </article>
+          <footer className="global-footer" />
+        </div>
+      </Router>
     )
   }
 }

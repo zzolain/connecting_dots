@@ -83,16 +83,37 @@ body {
   z-index: 1000;
 }
 
-
-
-
-
 .global-footer {
   position: fixed;
   top: 98vh;
   left: 2vw;
   right: 2vw;
   border-top: 1px solid #343434;
-  z-index: 1000;
+  z-index: 900;
 }
+
+
+.content {
+  background-color: black;
+  transition: transform 0.5s, opacity 0.5s;
+}
+.transition-appear {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+.transition-appear.transition-appear-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+.transition-leave {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+.transition-leave.transition-leave-active {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
 

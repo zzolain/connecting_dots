@@ -100,7 +100,7 @@ const menuState = {
 const initialState = {
   windowMenuState: false,
   menuState: menuState,
-  navigateDirection: 'null'
+  navigateDirection: null
 }
 
 function reducer(state = initialState, action) {
