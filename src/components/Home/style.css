@@ -1,18 +1,18 @@
-.home {
-    padding-top: 20vh;
+.home__container {
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: black;
     
 }
-.home__container {
+.home__logo-container {
     position: relative;
     width: calc(200px + 10vw);
     height: calc(200px + 10vw);
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     align-items: center;
 }
 
@@ -212,7 +212,8 @@
 }
 
 .home__subtitle {
-    margin-top: 5vh;
+    width: 100%;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -232,6 +233,7 @@
     letter-spacing: .5rem;
     text-emphasis: dot;
     text-emphasis-position: under left;
+    transition: all .5s ease;
 }
 
 .home__subtitle .home__url-title:hover {
@@ -248,7 +250,7 @@
 
 @keyframes scrollDown {
     50% {
-        transform: translate3d(0, -20%, 0);
+        transform: translate3d(0, -15%, 0);
     }
 }
 

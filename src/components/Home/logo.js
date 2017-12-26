@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Logo() {
   return (
-    <div>
-      <div className="home__container">
+    <div className="home__container">
+      <div className="home__logo-container">
         <div className="home__connectingLine--left">
           <div className="home__connectingLine" />
           <div className="home__connectingLine__mask--inner" />
