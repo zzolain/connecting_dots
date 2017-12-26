@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
 import './style.css'
 import Logo from './logo'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { actionCreators } from '../../reducer'
 
-export default class Home extends Component {
+class Home extends Component {
   componentDidMount() {
-    const elemHome = document.querySelector('.home')
-    setTimeout(() => {
-      elemHome.classList.add('home--active')
-    }, 1000)
+    if (!this.props.logoPlayed) {
+      setTimeout(() => {
+        document.querySelector('.home').classList.add('home--active')
+      }, 1000)
+    } else {
+      document.querySelector('.home').classList.add('home--played')
+    }
+  }
+  componentWillUnmount() {
+    this.props.applyLogoPlayed(true)
   }
 
   render() {
@@ -19,3 +28,16 @@ export default class Home extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    logoPlayed: state.logoPlayed
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    applyLogoPlayed: bindActionCreators(actionCreators.logoPlayed, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

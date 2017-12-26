@@ -147,7 +147,6 @@
     }
 }
 
-
 .home--active .home__dot--center {
     transition-delay: 1.4s;
     animation-delay: 0.8s;
@@ -158,11 +157,24 @@
     animation-delay: 1.6s;
 }
 
+.home--played .home__dot--left,
+.home--played .home__dot--center,
+.home--played .home__dot--right {
+    opacity: 100;
+    width: 10%;
+    height: 10%;
+}
+
 .home--active .home__connectingLine__mask--outer {
     transform: rotateZ(-179deg); 
     transform-origin: left bottom;
     transition: all 1.2s linear;
     transition-delay: 2.4s;
+}
+
+.home--played .home__connectingLine__mask--outer {
+    transform: rotateZ(-179deg); 
+    transform-origin: left bottom;
 }
 
 .home--active .home__connectingLine--right .home__connectingLine__mask--inner{
@@ -172,11 +184,21 @@
     transition-delay: 3s;
 }
 
+.home--played .home__connectingLine--right .home__connectingLine__mask--inner{
+    transform: rotateZ(-180deg);
+    transform-origin: left bottom;
+}
+
 .home--active .home__connectingLine--left .home__connectingLine__mask--inner{
     transform: rotateZ(-180deg);
     transform-origin: left bottom;
     transition: all 1.2s linear;
     transition-delay: 3.8s;
+}
+
+.home--played .home__connectingLine--left .home__connectingLine__mask--inner{
+    transform: rotateZ(-180deg);
+    transform-origin: left bottom;
 }
 
 .home--active .home__title {
@@ -185,30 +207,57 @@
     transition-delay: 5s;
 }
 
-.home__skills {
-    display: flex;
+.home--played .home__title {
+    opacity: 100;
+}
+
+.home__subtitle {
     margin-top: 5vh;
-    color: white;
-    font-size: .9rem;
-    height: 3rem;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
 }
 
-.home__skill {
-    text-align: center;
-    width: 33%;
-    margin-bottom: 1rem;
+.home__subtitle .home__url {
+    font-size: .7rem;
+    color: tomato;
 }
 
-.home__skill p {
+.home__subtitle .home__url-title {
     margin-top: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    color: gray;
+    letter-spacing: .5rem;
+    text-emphasis: dot;
+    text-emphasis-position: under left;
 }
 
-.home--active .home__skills {
+.home__subtitle .home__url-title:hover {
+    color: whitesmoke;
+}
+
+#scroll-down {
+    position: absolute;
+    bottom: 5%;
+    color: gray;
+    font-size: 1.5rem;
+    animation: scrollDown 1s ease infinite;
+}
+
+@keyframes scrollDown {
+    50% {
+        transform: translate3d(0, -20%, 0);
+    }
+}
+
+.home--active .home__subtitle {
     opacity: 100;
     transition: all 1s;
     transition-delay: 6s;
+}
+
+.home--played .home__subtitle {
+    opacity: 100;
 }

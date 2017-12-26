@@ -2,6 +2,7 @@
 const TOGGLE_WINDOW_MENU = 'TOGGLE_WINDOW_MENU'
 const SELECT_MENU = 'SELECT_MENU'
 const NAVIGATE_DIRECTION = 'NEVIGATE_DIRECTION'
+const LOGO_PLAYED = 'LOGO_PLAYED'
 
 // Action Creators
 function toggleWindowMenu(switchValue) {
@@ -22,6 +23,13 @@ function navigateDirection(direction) {
   return {
     type: NAVIGATE_DIRECTION,
     payload: direction
+  }
+}
+
+function logoPlayed(played) {
+  return {
+    type: LOGO_PLAYED,
+    payload: played
   }
 }
 
@@ -89,6 +97,23 @@ function applyNavigateDirection(state, payload) {
   }
 }
 
+function applyLogoPlayed(state, payload) {
+  switch (payload) {
+  case true:
+    return {
+      ...state,
+      logoPlayed: true
+    }
+  case false:
+    return {
+      ...state,
+      logoPlayed: false
+    }
+  default:
+    return state
+  }
+}
+
 // Reducer
 
 const menuState = {
@@ -100,7 +125,8 @@ const menuState = {
 const initialState = {
   windowMenuState: false,
   menuState: menuState,
-  navigateDirection: null
+  navigateDirection: null,
+  logoPlayed: false
 }
 
 function reducer(state = initialState, action) {
@@ -114,6 +140,9 @@ function reducer(state = initialState, action) {
   case NAVIGATE_DIRECTION:
     return applyNavigateDirection(state, action.payload)
 
+  case LOGO_PLAYED:
+    return applyLogoPlayed(state, action.payload)
+
   default:
     return state
   }
@@ -124,7 +153,8 @@ function reducer(state = initialState, action) {
 const actionCreators = {
   toggleWindowMenu,
   selectMenu,
-  navigateDirection
+  navigateDirection,
+  logoPlayed
 }
 
 export { actionCreators }

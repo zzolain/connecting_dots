@@ -26,12 +26,12 @@ class Animation extends Component {
 
   static defaultProps = {
     enterSpringConfig: {
-      friction: 6,
-      tension: 16
+      friction: 10,
+      tension: 10
     },
     leaveSpringConfig: {
-      friction: 7,
-      tension: 80
+      friction: 10,
+      tension: 10
     }
   };
 

@@ -24,20 +24,10 @@ export default function Logo() {
         <div className="home__connectingLine--outer" />
         <div className="home__connectingLine__mask--outer" />
       </div>
-      <div className="home__skills">
-        <div className="home__skill">
-          <span>HTML</span>
-        </div>
-        <div className="home__skill">
-          <span>CSS</span>
-        </div>
-        <div className="home__skill">
-          <span>JavaScript</span>
-        </div>
-        <div className="home__skill">
-          <span>&&</span>
-          <p> React</p>
-        </div>
+      <div className="home__subtitle">
+        <span className="home__url">https://jinsol.kim</span>
+        <span className="home__url-title">Connecting the dots</span>
+
       </div>
     </div>
   )
