@@ -11,8 +11,6 @@ class Home extends Component {
       setTimeout(() => {
         document.querySelector('.home').classList.add('home--active')
       }, 1000)
-    } else {
-      document.querySelector('.home').classList.add('home--played')
     }
   }
   componentWillUnmount() {
@@ -21,7 +19,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="home">
+      <div className={`home ${ this.props.logoPlayed ? 'home--played' : ''}`}>
         <Logo />
       </div>
     )

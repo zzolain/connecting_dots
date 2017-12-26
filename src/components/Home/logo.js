@@ -27,7 +27,7 @@ export default function Logo() {
       <div className="home__subtitle">
         <span className="home__url">https://jinsol.kim</span>
         <span className="home__url-title">Connecting the dots</span>
-
+        <span id="scroll-down">⇣</span>
       </div>
     </div>
   )

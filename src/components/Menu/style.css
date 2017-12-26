@@ -51,14 +51,14 @@
   background-color: black;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   z-index: 1100;
   opacity: 0;
   display: flex;
   transform: translate3d(-100%, -10%, 0);
 }
 .menu__window ul {
-  transform: translate3d(-100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
 }
 .menu__window .menu__link {
   position: relative;
