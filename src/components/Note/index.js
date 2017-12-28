@@ -31,13 +31,9 @@ export default class Note extends Component {
     })
 
     this.database.on('child_removed', snap => {
-      for (let i = 0; i < previousNotes.length; i++) {
-        if (previousNotes[i].id === snap.key) {
-          previousNotes.splice(i, 1)
-        }
-      }
+      previousNotes.splice(previousNotes.indexOf(snap), 1)
       this.setState({
-        notes: previousNotes
+        note: previousNotes
       })
     })
   }
@@ -48,6 +44,7 @@ export default class Note extends Component {
 
   removeNote(noteId) {
     this.database.child(noteId).remove()
+    console.log(this.state.notes)
   }
 
   render() {
