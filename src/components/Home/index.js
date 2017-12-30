@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import './style.css'
 import Logo from './logo'
-import Note from '../Note'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { actionCreators } from '../../reducer'
+import { actionCreators } from 'redux/modules/menu'
 
 class Home extends Component {
   componentDidMount() {
@@ -22,15 +21,15 @@ class Home extends Component {
     return (
       <div className={`home ${ this.props.logoPlayed ? 'home--played' : ''}`}>
         <Logo />
-        <Note />
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
+  const { menu } = state
   return {
-    logoPlayed: state.logoPlayed
+    logoPlayed: menu.logoPlayed
   }
 }
 

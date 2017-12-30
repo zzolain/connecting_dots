@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './style.css'
-import Dots from '../Dots'
+import Dots from 'components/Dots'
 import Introduction from './introduction'
 
 

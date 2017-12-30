@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import './App.css'
-import Menu from './components/Menu'
-import Home from './components/Home'
-import About from './components/About'
-import Project from './components/Project'
+import Menu from 'components/Menu'
+import Home from 'components/Home'
+import About from 'components/About'
+import Project from 'components/Project'
 
-import AnimationRoute from './Route/AnimationRoute'
+import AnimationRoute from 'Route/AnimationRoute'
 
 class App extends Component {
   constructor(props) {
@@ -41,10 +41,11 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state, ownProps) => {
+    const { menu } = state
   return {
-    menuSelected: state.menuState.menuSelected,
-    navigateDirection: state.navigateDirection
+    menuSelected: menu.menuState.menuSelected,
+    navigateDirection: menu.navigateDirection
   }
 }
 

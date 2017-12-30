@@ -5,12 +5,15 @@
   "dependencies": {
     "animated": "^0.2.1",
     "firebase": "^4.8.1",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
+    "history": "^4.7.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "1.0.17",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -19,5 +22,9 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "firebase deploy"
+  },
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6"
   }
 }

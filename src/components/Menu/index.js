@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './style.css'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { actionCreators } from '../../reducer/index'
+import { actionCreators } from 'redux/modules/menu'
 import MenuLink from './menu_link'
 
 class Menu extends Component {
@@ -48,10 +48,12 @@ class Menu extends Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state, ownProps) => {
+  const { menu } = state
   return {
-    windowMenuState: state.windowMenuState,
-    menuState: state.menuState }
+    windowMenuState: menu.windowMenuState,
+    menuState: menu.menuState 
+  }
 }
 
 function mapDispatchToProps(dispatch) {

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { actionCreators } from '../../reducer/index'
+import { actionCreators } from 'redux/modules/menu'
 
 class MenuLink extends Component {
     menuList = {
@@ -31,9 +31,10 @@ class MenuLink extends Component {
 }
 
 function mapStateToProps(state) {
+  const { menu } = state
   return {
-    windowMenuState: state.windowMenuState,
-    menuState: state.menuState }
+    windowMenuState: menu.windowMenuState,
+    menuState: menu.menuState }
 }
 
 function mapDispatchToProps(dispatch) {
