@@ -28,7 +28,6 @@ export default function Logo() {
         <span className="home__url">https://jinsol.kim</span>
         <span className="home__url-title">Connecting the dots</span>
       </div>
-      <span id="scroll-down">⇣</span>
     </div>
   )
 }

@@ -241,20 +241,6 @@
     color: whitesmoke;
 }
 
-#scroll-down {
-    position: absolute;
-    bottom: 5%;
-    color: gray;
-    font-size: 1.5rem;
-    animation: scrollDown 1s ease infinite;
-}
-
-@keyframes scrollDown {
-    50% {
-        transform: translate3d(0, -15%, 0);
-    }
-}
-
 .home--active .home__subtitle {
     opacity: 100;
     transition: all 1s;

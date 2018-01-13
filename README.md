@@ -1,5 +1,5 @@
-# Building An Interactive Web Site
+# My Portfolio website
 
-- No jQuery
-- This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+- React
+- Redux
 
