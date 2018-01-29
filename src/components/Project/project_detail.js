@@ -57,7 +57,9 @@ export default class ProjectDetail extends Component {
               <div className="project__thumnail--image" style={bgImageStyle} />
             </div>
             <div className="project__thumnail__text">
-              <span>{description}</span>
+              {description.split('\n').map( line => {
+                return (<span>{line}<br /></span>)
+              })}
               <a href={url} target="_blank">
                 <p>{url}</p>
               </a>
