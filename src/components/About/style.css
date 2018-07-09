@@ -49,10 +49,11 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 0 2rem;
+  padding: 0 1rem;
   font-size: 0.8rem;
   font-weight: 100;
   line-height: 1.5rem;
+  word-break: keep-all;
   white-space: pre-wrap;
 }
 

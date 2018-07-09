@@ -4,6 +4,7 @@ import Logo from './logo'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from 'redux/modules/menu'
+import Post from '../Post';
 
 class Home extends Component {
   componentDidMount() {
@@ -21,6 +22,7 @@ class Home extends Component {
     return (
       <div className={`home ${ this.props.logoPlayed ? 'home--played' : ''}`}>
         <Logo />
+        <Post/>
       </div>
     )
   }

@@ -1,4 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
+.*
 
 # dependencies
 /node_modules
@@ -20,6 +21,7 @@
 .firebaserc
 database.rules.json
 firebase.json
+/src/config/fb.js
 
 
 npm-debug.log*

@@ -7,7 +7,7 @@ export default class About extends Component {
   introductionList = [
     {
       title: '',
-      korean: '안녕하세요\n저는 멋진 프론트엔드 개발자를 꿈꾸는 김진솔입니다.\n얼마 전까지 코딩에 "코"자도 모르던 저였지만,\n지금은 개발 덕후가 되어 개발자로서의 삶을 꿈꾸고,\n최신 맥북에 군침을 흘리고 있습니다.',
+      korean: '안녕하세요.\n저는 멋진 프론트엔드 개발자를 꿈꾸는 김진솔입니다.\n얼마 전까지 코딩에 "코"자도 모르던 저였지만,\n지금은 개발 덕후가 되어 개발자로서의 삶을 꿈꾸고,\n최신 맥북에 군침을 흘리고 있습니다.',
       english: 'Hello, I\'m Jinsol Kim dreaming to become an awesome Front-end developer.\nUntil just a few months ago I knew nothing about development,\nBut now I\'ve become such a coding geek who desires a brand new MacBook.'
     },
     {

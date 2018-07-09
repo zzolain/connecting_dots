@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './style.css'
-import Dots from 'components/Dots'
+// import Dots from 'components/Dots'
 import Introduction from './introduction'
 
 
@@ -51,7 +51,7 @@ export default class Hello extends Component {
         </div>
         <Introduction introductionList={this.props.introductionList} index={2} />
         <Introduction introductionList={this.props.introductionList} index={3} />
-        <Dots />
+        {/*<Dots />*/}
       </div>
     )
   }

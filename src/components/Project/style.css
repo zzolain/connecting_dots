@@ -110,13 +110,13 @@
 }
 
 .project__thumnail__text {
-    padding: 2.5rem 2vw;
+    padding: 2.5rem 1rem;
     color: white;
-    font-size: .7rem;
+    font-size: .8rem;
     line-height: 1.8rem;
     font-weight: 100;
-    width: calc(150px + 10vw);
     max-width: 350px;
+    word-break: keep-all;
 }
 
 .project__thumnail__text a {
